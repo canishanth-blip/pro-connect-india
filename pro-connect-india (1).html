@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRO Connect India – India's Professional Network</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --b900:#0a2540;--b800:#0d3460;--b700:#1155a0;--b600:#1769c4;--b500:#2185d0;--b400:#4da3e3;--b100:#ddeeff;--b50:#eef6ff;
+  --g50:#f8fafc;--g100:#f1f5f9;--g200:#e2e8f0;--g400:#94a3b8;--g500:#64748b;--g700:#334155;--g900:#0f172a;
+  --green:#16a34a;--gold:#d97706;--purple:#7c3aed;--pink:#db2777;
+  --r:8px;--rl:14px;--sh:0 2px 12px rgba(10,37,64,.09);--shm:0 4px 24px rgba(10,37,64,.13)
+}
+body{font-family:'Inter',sans-serif;background:var(--g50);color:var(--g900);line-height:1.6;font-size:15px}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{background:#fff;border-bottom:1px solid var(--g200);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:0 24px;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--b700);flex-shrink:0;cursor:pointer}
+.logo-icon{width:34px;height:34px;background:var(--b700);border-radius:6px;display:flex;align-items:center;justify-content:center}
+.logo-icon svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2}
+.logo span{color:var(--b500)}
+.nav-search{flex:1;max-width:320px;display:flex;align-items:center;gap:8px;background:var(--g100);border:1px solid var(--g200);border-radius:24px;padding:7px 14px;font-size:14px;color:var(--g500);cursor:pointer}
+.nav-search svg{width:16px;height:16px;stroke:var(--g400);flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav-link{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 12px;border-radius:6px;font-size:12px;color:var(--g500);cursor:pointer;transition:color .15s,background .15s}
+.nav-link:hover{color:var(--b700);background:var(--b50)}
+.nav-link svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}
+.nav-link.active{color:var(--b700);border-bottom:2px solid var(--b700);border-radius:0}
+.plan-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.badge-free{background:var(--g100);color:var(--g500)}
+.badge-pro{background:var(--b50);color:var(--b700)}
+.badge-elite{background:#fef3c7;color:#92400e}
+.badge-influencer{background:linear-gradient(135deg,#fce7f3,#ede9fe);color:#9d174d}
+.nav-btn-primary{background:var(--b700);color:#fff;border:none;padding:8px 18px;border-radius:24px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.nav-btn-primary:hover{background:var(--b800)}
+.nav-btn-outline{background:#fff;color:var(--b700);border:1.5px solid var(--b700);padding:7px 16px;border-radius:24px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.nav-btn-outline:hover{background:var(--b50)}
+
+/* PAGES */
+.page{display:none}.page.active{display:block}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--b900) 0%,var(--b700) 60%,var(--b500) 100%);padding:72px 24px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.hero-content{position:relative;max-width:700px;margin:0 auto}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:12px;font-weight:600;letter-spacing:.06em;padding:5px 14px;border-radius:20px;margin-bottom:20px;text-transform:uppercase}
+.hero h1{font-size:clamp(28px,5vw,46px);font-weight:800;line-height:1.18;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:#7fd4fa}
+.hero p{font-size:17px;color:rgba(255,255,255,.82);margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-hero-primary{background:#fff;color:var(--b800);font-weight:700;font-size:15px;padding:13px 28px;border-radius:28px;border:none;cursor:pointer}
+.btn-hero-primary:hover{transform:translateY(-1px)}
+.btn-hero-secondary{background:transparent;color:#fff;font-weight:600;font-size:15px;padding:12px 28px;border-radius:28px;border:1.5px solid rgba(255,255,255,.5);cursor:pointer}
+.btn-hero-secondary:hover{background:rgba(255,255,255,.1)}
+.hero-stats{margin-top:52px;display:flex;justify-content:center;gap:48px;flex-wrap:wrap;padding-top:40px;border-top:1px solid rgba(255,255,255,.15)}
+.hero-stat{text-align:center}
+.hero-stat-n{font-size:28px;font-weight:700}
+.hero-stat-l{font-size:13px;color:rgba(255,255,255,.65);margin-top:2px}
+
+/* SECTION */
+.section{max-width:1200px;margin:0 auto;padding:64px 24px}
+.section-title{font-size:26px;font-weight:700;color:var(--g900);margin-bottom:6px}
+.section-sub{font-size:15px;color:var(--g500);margin-bottom:36px}
+.section-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:36px;flex-wrap:wrap;gap:12px}
+.see-all{font-size:13px;color:var(--b600);font-weight:600;cursor:pointer;white-space:nowrap}
+
+/* PROFESSION STRIP */
+.profession-strip{background:#fff;border-bottom:1px solid var(--g200);overflow-x:auto}
+.profession-strip-inner{display:flex;max-width:1200px;margin:0 auto;padding:0 24px}
+.prof-pill{display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:13px;font-weight:500;color:var(--g500);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.prof-pill.active{color:var(--b700);border-color:var(--b700)}
+.prof-pill:hover{color:var(--b700)}
+.prof-pill.influencer-pill.active{color:var(--pink);border-color:var(--pink)}
+.prof-pill.influencer-pill:hover{color:var(--pink)}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.profile-card{background:#fff;border:1px solid var(--g200);border-radius:var(--rl);overflow:hidden;transition:box-shadow .18s,transform .18s;cursor:pointer;position:relative}
+.profile-card:hover{box-shadow:var(--shm);transform:translateY(-2px)}
+.profile-card.influencer-card{border-color:#fce7f3}
+.card-cover{height:64px}
+.card-body{padding:0 18px 18px}
+.card-avatar{width:64px;height:64px;border-radius:50%;border:3px solid #fff;margin-top:-32px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;color:#fff;flex-shrink:0;position:relative}
+.verified-badge{position:absolute;bottom:0;right:0;width:20px;height:20px;background:#16a34a;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff}
+.card-name{font-weight:700;font-size:15px;color:var(--g900)}
+.card-title{font-size:13px;color:var(--g500);margin-top:2px}
+.card-org{font-size:12px;color:var(--g400);margin-top:2px}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.tag{font-size:11px;font-weight:500;padding:3px 9px;border-radius:20px;background:var(--b50);color:var(--b700)}
+.tag.influencer-tag{background:#fce7f3;color:#9d174d}
+.card-social{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.social-mini{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;border:1px solid var(--g200)}
+.card-connect{margin-top:12px;width:100%;background:#fff;color:var(--b700);border:1.5px solid var(--b700);border-radius:24px;padding:6px 0;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s}
+.card-connect:hover{background:var(--b50)}
+.card-connect.influencer-btn{color:var(--pink);border-color:var(--pink)}
+.card-connect.influencer-btn:hover{background:#fce7f3}
+.lock-overlay{position:absolute;inset:0;background:rgba(255,255,255,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:var(--rl)}
+.lock-overlay svg{width:28px;height:28px;stroke:var(--g400);fill:none;stroke-width:1.8}
+.lock-overlay p{font-size:12px;color:var(--g500);text-align:center;padding:0 16px}
+.lock-overlay button{background:var(--b700);color:#fff;border:none;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;cursor:pointer}
+
+/* INFLUENCER STATS */
+.inf-stats{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+.inf-stat{display:flex;flex-direction:column;align-items:center;background:var(--g50);border-radius:8px;padding:6px 10px;min-width:52px}
+.inf-stat-n{font-size:13px;font-weight:700;color:var(--g900)}
+.inf-stat-l{font-size:10px;color:var(--g400)}
+
+/* PRICING */
+.pricing-hero{background:linear-gradient(135deg,var(--b900),var(--b700));padding:60px 24px 48px;text-align:center;color:#fff}
+.pricing-hero h1{font-size:clamp(24px,4vw,40px);font-weight:800;margin-bottom:10px}
+.pricing-hero p{font-size:16px;color:rgba(255,255,255,.8);margin-bottom:28px}
+.billing-toggle{display:inline-flex;align-items:center;background:rgba(255,255,255,.15);border-radius:30px;padding:4px;gap:0}
+.toggle-btn{padding:7px 22px;border-radius:24px;border:none;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:rgba(255,255,255,.7);transition:background .15s,color .15s}
+.toggle-btn.active{background:#fff;color:var(--b800)}
+.save-badge{background:#fef3c7;color:#92400e;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:8px}
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1100px;margin:0 auto;padding:0 24px}
+.plan-card{background:#fff;border:1.5px solid var(--g200);border-radius:var(--rl);padding:32px;position:relative;transition:box-shadow .18s}
+.plan-card:hover{box-shadow:var(--shm)}
+.plan-card.featured{border:2px solid var(--b700);box-shadow:0 8px 32px rgba(17,85,160,.15)}
+.plan-popular{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--b700);color:#fff;font-size:11px;font-weight:700;padding:4px 16px;border-radius:20px;white-space:nowrap}
+.plan-name{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--g400);margin-bottom:10px}
+.plan-price{display:flex;align-items:baseline;gap:6px;margin-bottom:6px}
+.plan-price-num{font-size:42px;font-weight:800;color:var(--g900)}
+.plan-price-num.gold{color:var(--gold)}
+.plan-price-num.pink{color:var(--pink)}
+.plan-price-period{font-size:14px;color:var(--g400)}
+.plan-orig{font-size:13px;color:var(--g400);text-decoration:line-through;margin-bottom:4px}
+.plan-desc{font-size:13px;color:var(--g500);margin-bottom:24px;line-height:1.5}
+.plan-btn{width:100%;padding:12px;border-radius:24px;font-size:14px;font-weight:700;cursor:pointer;border:none;margin-bottom:24px}
+.plan-btn-primary{background:var(--b700);color:#fff}
+.plan-btn-primary:hover{background:var(--b800)}
+.plan-btn-gold{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff}
+.plan-btn-pink{background:linear-gradient(135deg,#ec4899,#db2777);color:#fff}
+.plan-btn-outline{background:#fff;color:var(--b700);border:1.5px solid var(--b700)!important}
+.plan-features{display:flex;flex-direction:column;gap:10px}
+.plan-feat{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--g700)}
+.feat-check{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.feat-check.yes{background:#dcfce7;color:#16a34a;font-size:11px}
+.feat-check.no{background:var(--g100);color:var(--g400);font-size:11px}
+
+/* COMPARE TABLE */
+.compare-wrap{max-width:1000px;margin:48px auto 0;padding:0 24px}
+.compare-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--g200);border-radius:var(--rl);overflow:hidden}
+.compare-table th{padding:14px 12px;font-size:12px;font-weight:600;text-align:center;background:var(--g50);border-bottom:1px solid var(--g200)}
+.compare-table th:first-child{text-align:left}
+.compare-table td{padding:11px 12px;font-size:12px;text-align:center;border-bottom:1px solid var(--g100);color:var(--g700)}
+.compare-table td:first-child{text-align:left;font-weight:500;color:var(--g900)}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table .cat-row td{background:var(--b50);color:var(--b700);font-weight:700;font-size:11px;text-align:left;text-transform:uppercase;letter-spacing:.06em;padding:8px 12px}
+.tick{color:#16a34a;font-weight:700}
+.cross{color:var(--g400)}
+
+/* PROFILE EDIT */
+.profile-edit-wrap{max-width:900px;margin:0 auto}
+.profile-header-card{background:#fff;border:1px solid var(--g200);border-radius:var(--rl);overflow:hidden;margin-bottom:20px}
+.profile-cover{height:160px;background:linear-gradient(135deg,var(--b700),var(--b400));position:relative;cursor:pointer}
+.profile-cover-change{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.5);color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer}
+.profile-cover-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);opacity:0;transition:opacity .2s;cursor:pointer}
+.profile-cover:hover .profile-cover-overlay{opacity:1}
+.profile-main-info{padding:0 24px 24px;position:relative}
+.profile-avatar-wrap{position:relative;display:inline-block;margin-top:-48px;margin-bottom:12px}
+.profile-avatar-lg{width:96px;height:96px;border-radius:50%;border:4px solid #fff;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;overflow:hidden}
+.avatar-change-btn{position:absolute;bottom:4px;right:4px;width:28px;height:28px;background:var(--b700);color:#fff;border:2px solid #fff;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;border:2px solid #fff}
+
+/* SOCIAL CONNECT */
+.social-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.social-connect-card{background:#fff;border:1.5px solid var(--g200);border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;transition:border-color .15s}
+.social-connect-card.connected{border-color:var(--green)}
+.social-connect-card.connected .social-status{color:var(--green);font-size:11px;font-weight:600}
+.social-icon-wrap{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.social-name{font-size:14px;font-weight:600;color:var(--g900)}
+.social-handle{font-size:12px;color:var(--g400)}
+.social-status{font-size:11px;color:var(--g400)}
+.social-btn{padding:5px 14px;border-radius:16px;font-size:12px;font-weight:600;border:none;cursor:pointer}
+.social-btn-connect{background:var(--b700);color:#fff}
+.social-btn-connected{background:var(--g100);color:var(--g500)}
+.social-btn-disconnect{background:#fee2e2;color:#dc2626;display:none}
+.social-connect-card.connected .social-btn-connect{display:none}
+.social-connect-card.connected .social-btn-connected{display:block}
+.social-connect-card:not(.connected) .social-btn-connect{display:block}
+.social-connect-card:not(.connected) .social-btn-connected{display:none}
+
+/* TABS */
+.tab-row{display:flex;border-bottom:1px solid var(--g200);margin-bottom:24px;overflow-x:auto}
+.tab-btn{padding:12px 20px;font-size:14px;font-weight:500;color:var(--g400);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;background:none;border-top:none;border-left:none;border-right:none}
+.tab-btn.active{color:var(--b700);border-bottom-color:var(--b700);font-weight:600}
+.tab-content{display:none}.tab-content.active{display:block}
+
+/* FORMS */
+.form-section{background:#fff;border:1px solid var(--g200);border-radius:var(--rl);padding:24px;margin-bottom:20px}
+.form-section-title{font-size:15px;font-weight:700;color:var(--g900);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.form-group label{font-size:13px;font-weight:500;color:var(--g700)}
+.form-group input,.form-group select,.form-group textarea{border:1px solid var(--g200);border-radius:var(--r);padding:10px 12px;font-size:14px;font-family:'Inter',sans-serif;color:var(--g900);background:var(--g50);transition:border-color .15s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--b500);background:#fff}
+.form-group textarea{resize:vertical;min-height:90px}
+.input-with-icon{position:relative}
+.input-with-icon input{padding-left:38px}
+.input-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:16px}
+.save-btn{background:var(--b700);color:#fff;border:none;padding:10px 28px;border-radius:24px;font-size:14px;font-weight:700;cursor:pointer}
+.save-btn:hover{background:var(--b800)}
+.cancel-btn{background:#fff;color:var(--g500);border:1.5px solid var(--g200);padding:9px 22px;border-radius:24px;font-size:14px;font-weight:600;cursor:pointer}
+
+/* DASHBOARD */
+.dash-grid{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+.dash-card{background:#fff;border:1px solid var(--g200);border-radius:var(--rl);padding:20px}
+.plan-status-card{border:2px solid var(--b700)}
+.plan-status-name{font-size:18px;font-weight:800;color:var(--b700);margin-bottom:2px}
+.usage-bar-wrap{margin-bottom:10px}
+.usage-label{display:flex;justify-content:space-between;font-size:12px;color:var(--g500);margin-bottom:4px}
+.usage-bar{height:6px;background:var(--g100);border-radius:4px;overflow:hidden}
+.usage-fill{height:100%;border-radius:4px;background:var(--b700)}
+.usage-fill.warn{background:#d97706}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:24px}
+.stat-card{background:#fff;border:1px solid var(--g200);border-radius:var(--r);padding:16px}
+.stat-label{font-size:12px;color:var(--g400);margin-bottom:6px}
+.stat-num{font-size:26px;font-weight:700;color:var(--g900)}
+.stat-change{font-size:11px;color:var(--green);margin-top:2px}
+
+/* FEED */
+.post-card{background:#fff;border:1px solid var(--g200);border-radius:var(--rl);padding:20px;margin-bottom:16px}
+.post-header{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.post-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;flex-shrink:0}
+.post-meta h4{font-size:14px;font-weight:600;color:var(--g900)}
+.post-meta p{font-size:12px;color:var(--g400)}
+.post-body{font-size:14px;color:var(--g700);line-height:1.65}
+.post-actions{display:flex;margin-top:14px;border-top:1px solid var(--g100);padding-top:10px}
+.post-act{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:6px 0;border-radius:6px;font-size:12px;font-weight:500;color:var(--g500);cursor:pointer;transition:background .15s,color .15s}
+.post-act:hover{background:var(--g100);color:var(--b700)}
+.post-act svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+/* SEARCH */
+.search-bar-lg{display:flex;gap:12px;align-items:center;background:#fff;border:1.5px solid var(--g200);border-radius:10px;padding:12px 18px;margin-bottom:28px;box-shadow:var(--sh)}
+.search-bar-lg svg{width:20px;height:20px;stroke:var(--g400);fill:none;flex-shrink:0}
+.search-bar-lg input{flex:1;border:none;outline:none;font-size:15px;font-family:'Inter',sans-serif;background:transparent}
+.search-bar-lg button{background:var(--b700);color:#fff;border:none;border-radius:8px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer}
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filter-pill{font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;border:1px solid var(--g200);background:#fff;color:var(--g500);cursor:pointer}
+.filter-pill.active{background:var(--b700);color:#fff;border-color:var(--b700)}
+.filter-pill.inf-pill.active{background:linear-gradient(135deg,#ec4899,#db2777);color:#fff;border-color:var(--pink)}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:var(--rl);padding:32px;max-width:500px;width:90%;position:relative;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:16px;right:16px;background:var(--g100);border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;color:var(--g500)}
+.modal h2{font-size:20px;font-weight:700;margin-bottom:6px}
+.modal p.sub{font-size:13px;color:var(--g400);margin-bottom:24px}
+.btn-submit{background:var(--b700);color:#fff;border:none;padding:12px 32px;border-radius:24px;font-size:14px;font-weight:700;cursor:pointer;width:100%;margin-top:8px}
+.btn-submit:hover{background:var(--b800)}
+
+/* CAT GRID */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.cat-card{background:#fff;border:1px solid var(--g200);border-radius:var(--rl);padding:22px 16px;text-align:center;cursor:pointer;transition:box-shadow .18s,border-color .18s}
+.cat-card:hover{box-shadow:var(--sh);border-color:var(--b400)}
+.cat-card.influencer-cat:hover{border-color:var(--pink)}
+.cat-icon{width:48px;height:48px;border-radius:12px;background:var(--b50);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:22px}
+.cat-icon.inf-icon{background:#fce7f3}
+.cat-name{font-size:13px;font-weight:600;color:var(--g700)}
+.cat-count{font-size:11px;color:var(--g400);margin-top:3px}
+
+/* REFERRAL */
+.referral-box{background:linear-gradient(135deg,#fef3c7,#fffbeb);border:1.5px solid #fcd34d;border-radius:var(--rl);padding:24px;margin-bottom:20px}
+.referral-code{background:#fff;border:1.5px dashed #f59e0b;border-radius:8px;padding:10px 16px;font-size:22px;font-weight:800;letter-spacing:.15em;color:#92400e;text-align:center;margin:12px 0}
+.invoice-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--g100);font-size:14px}
+.invoice-row:last-child{border-bottom:none}
+.status-paid{background:#dcfce7;color:#15803d;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px}
+
+/* FOOTER */
+footer{background:var(--b900);color:rgba(255,255,255,.7);padding:48px 24px 24px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;margin-bottom:40px}
+.footer-col h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col ul li{font-size:13px;cursor:pointer}
+.footer-col ul li:hover{color:var(--b400)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+
+/* FEED TABS */
+.feed-tab{padding:10px 18px;font-size:13px;font-weight:500;color:var(--g400);cursor:pointer;white-space:nowrap;border:none;background:none;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.feed-tab.active{color:var(--b700);border-bottom-color:var(--b700);font-weight:600}
+.feed-tab:hover{color:var(--b700)}
+
+/* COMPOSE TYPE BUTTONS */
+.ctype-btn{padding:6px 14px;border-radius:20px;border:1px solid var(--g200);background:#fff;font-size:12px;font-weight:600;cursor:pointer;color:var(--g500);transition:all .15s}
+.ctype-btn.active{background:var(--b700);color:#fff;border-color:var(--b700)}
+
+/* POST/ARTICLE TYPE BADGE */
+.type-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;margin-bottom:10px}
+.type-badge.post{background:var(--g100);color:var(--g500)}
+.type-badge.article{background:#ede9fe;color:#6d28d9}
+.type-badge.insight{background:#fef3c7;color:#92400e}
+.type-badge.news{background:#dcfce7;color:#15803d}
+
+/* ARTICLE CARD */
+.article-card{background:#fff;border:1px solid var(--g200);border-radius:var(--rl);overflow:hidden;margin-bottom:16px;transition:box-shadow .18s}
+.article-card:hover{box-shadow:var(--shm)}
+.article-card-body{padding:20px}
+.article-card-meta{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.article-read-btn{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;color:var(--b700);cursor:pointer}
+.article-read-btn:hover{text-decoration:underline}
+
+/* COMMENT BOX */
+.comment-box{display:flex;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid var(--g100)}
+.comment-inp{flex:1;border:1px solid var(--g200);border-radius:20px;padding:7px 14px;font-size:13px;font-family:'Inter',sans-serif;background:var(--g50);outline:none}
+.comment-inp:focus{border-color:var(--b400)}
+.comment-send{background:var(--b700);color:#fff;border:none;border-radius:20px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer}
+
+/* COMMENT LIST */
+.comment-item{display:flex;gap:8px;margin-top:10px}
+.comment-avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0}
+.comment-bubble{background:var(--g50);border-radius:12px;padding:8px 12px;font-size:13px;color:var(--g700);flex:1}
+.comment-name{font-size:12px;font-weight:600;color:var(--g900);margin-bottom:2px}
+
+
+.toast{position:fixed;bottom:24px;right:24px;background:var(--g900);color:#fff;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:500;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s}
+.toast.show{transform:translateY(0);opacity:1}
+
+@media(max-width:900px){.dash-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.form-row{grid-template-columns:1fr}.nav-link span{display:none}.hero h1{font-size:26px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo" onclick="showPage('home')">
+      <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      PRO<span>Connect</span>&nbsp;India
+    </div>
+    <div class="nav-search" onclick="showPage('search')">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      Search professionals, influencers…
+    </div>
+    <div class="nav-links">
+      <div class="nav-link active" onclick="showPage('home')"><svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></div>
+      <div class="nav-link" onclick="showPage('search')"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><span>Explore</span></div>
+      <div class="nav-link" onclick="showPage('dashboard')"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Dashboard</span></div>
+      <div class="nav-link" onclick="showPage('pricing')"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span>Plans</span></div>
+      <div class="nav-link" onclick="showPage('myprofile')"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>My Profile</span></div>
+    </div>
+    <button class="nav-btn-outline" onclick="openModal('login')">Sign In</button>
+    <button class="nav-btn-primary" onclick="showPage('pricing')">View Plans</button>
+  </div>
+</nav>
+
+<!-- ══ HOME PAGE ══ -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">India's #1 Professional & Influencer Network</div>
+      <h1>Connect. Collaborate. <em>Grow.</em></h1>
+      <p>Find CAs, Advocates, Engineers, Consultants, Advisors and top Influencers across India. Subscription plans from ₹299/month.</p>
+      <div class="hero-actions">
+        <button class="btn-hero-primary" onclick="showPage('pricing')">See Plans & Pricing</button>
+        <button class="btn-hero-secondary" onclick="showPage('search')">Browse Professionals</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-n">2.4 L+</div><div class="hero-stat-l">Professionals</div></div>
+        <div class="hero-stat"><div class="hero-stat-n">18,000+</div><div class="hero-stat-l">Influencers</div></div>
+        <div class="hero-stat"><div class="hero-stat-n">28</div><div class="hero-stat-l">States</div></div>
+        <div class="hero-stat"><div class="hero-stat-n">₹299/mo</div><div class="hero-stat-l">Starting Price</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profession Strip -->
+  <div class="profession-strip">
+    <div class="profession-strip-inner">
+      <div class="prof-pill active" onclick="setProfPill(this,'All')">All</div>
+      <div class="prof-pill" onclick="setProfPill(this,'CA')">CA / CMA</div>
+      <div class="prof-pill" onclick="setProfPill(this,'Advocate')">Advocates</div>
+      <div class="prof-pill" onclick="setProfPill(this,'Engineer')">Engineers</div>
+      <div class="prof-pill" onclick="setProfPill(this,'Consultant')">Consultants</div>
+      <div class="prof-pill" onclick="setProfPill(this,'Advisor')">Advisors</div>
+      <div class="prof-pill" onclick="setProfPill(this,'CS')">CS / Secretaries</div>
+      <div class="prof-pill influencer-pill" onclick="setProfPill(this,'Influencer')">✨ Influencers</div>
+      <div class="prof-pill" onclick="setProfPill(this,'CorpPres')">🎯 Corporate Presentation</div>
+    </div>
+  </div>
+
+  <!-- Featured -->
+  <div class="section">
+    <div class="section-header">
+      <div><div class="section-title">Featured Professionals & Influencers</div><div class="section-sub">Verified experts — full profiles & contact on PRO & Elite plans</div></div>
+      <div class="see-all" onclick="showPage('search')">See all →</div>
+    </div>
+    <div class="card-grid" id="home-cards"></div>
+  </div>
+
+  <!-- Categories -->
+  <div style="background:var(--g100);padding:1px 0">
+    <div class="section">
+      <div class="section-title" style="margin-bottom:6px">Browse by Category</div>
+      <div class="section-sub">Including our newest category — Influencers & Content Creators</div>
+      <div class="cat-grid">
+        <div class="cat-card" onclick="showPage('pricing')"><div class="cat-icon">📊</div><div class="cat-name">Chartered Accountants</div><div class="cat-count">43,200+ members</div></div>
+        <div class="cat-card" onclick="showPage('pricing')"><div class="cat-icon">⚖️</div><div class="cat-name">Advocates & Lawyers</div><div class="cat-count">31,800+ members</div></div>
+        <div class="cat-card" onclick="showPage('pricing')"><div class="cat-icon">⚙️</div><div class="cat-name">Engineers</div><div class="cat-count">67,400+ members</div></div>
+        <div class="cat-card" onclick="showPage('pricing')"><div class="cat-icon">💼</div><div class="cat-name">Business Consultants</div><div class="cat-count">22,100+ members</div></div>
+        <div class="cat-card" onclick="showPage('pricing')"><div class="cat-icon">📈</div><div class="cat-name">Financial Advisors</div><div class="cat-count">28,900+ members</div></div>
+        <div class="cat-card" onclick="showPage('pricing')"><div class="cat-icon">🏛️</div><div class="cat-name">Company Secretaries</div><div class="cat-count">12,300+ members</div></div>
+        <div class="cat-card" onclick="showPage('pricing')"><div class="cat-icon">🏗️</div><div class="cat-name">Architects</div><div class="cat-count">9,700+ members</div></div>
+        <div class="cat-card influencer-cat" onclick="showPage('search')"><div class="cat-icon inf-icon">✨</div><div class="cat-name">Influencers & Creators</div><div class="cat-count">18,000+ members</div></div>
+        <div class="cat-card" style="border-color:#e0e7ff" onclick="filterAndGo('CorpPres')"><div class="cat-icon" style="background:#eef2ff;font-size:22px">🎯</div><div class="cat-name">Corporate Presentation Consultants</div><div class="cat-count">4,800+ members</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compose Box -->
+  <div class="section" style="padding-bottom:0">
+    <div id="compose-box" style="background:#fff;border:1px solid var(--g200);border-radius:var(--rl);padding:16px;display:flex;gap:14px;align-items:flex-start">
+      <div style="width:44px;height:44px;border-radius:50%;background:var(--b700);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;flex-shrink:0">RK</div>
+      <div style="flex:1">
+        <div id="compose-trigger" onclick="expandCompose()" style="background:var(--g50);border:1px solid var(--g200);border-radius:24px;padding:11px 18px;font-size:14px;color:var(--g400);cursor:pointer">Share a post, article or insight with the public…</div>
+        <div id="compose-expanded" style="display:none">
+          <div style="display:flex;gap:6px;margin:12px 0 10px;border-bottom:1px solid var(--g200);padding-bottom:10px">
+            <button class="ctype-btn active" id="ctype-post" onclick="setComposeType('post')">📝 Post</button>
+            <button class="ctype-btn" id="ctype-article" onclick="setComposeType('article')">📰 Article</button>
+            <button class="ctype-btn" id="ctype-insight" onclick="setComposeType('insight')">💡 Insight</button>
+            <button class="ctype-btn" id="ctype-news" onclick="setComposeType('news')">📣 Announcement</button>
+          </div>
+          <div id="article-title-wrap" style="display:none;margin-bottom:10px">
+            <input type="text" id="article-title-inp" placeholder="Article headline…" style="width:100%;border:1px solid var(--g200);border-radius:8px;padding:10px 14px;font-size:16px;font-weight:600;font-family:'Inter',sans-serif;color:var(--g900);background:var(--g50);outline:none">
+          </div>
+          <textarea id="compose-body" placeholder="Write your content here. Articles, insights and announcements are visible to everyone publicly…" style="width:100%;border:1px solid var(--g200);border-radius:8px;padding:12px 14px;font-size:14px;font-family:'Inter',sans-serif;color:var(--g900);background:var(--g50);resize:vertical;min-height:120px;line-height:1.65;outline:none" oninput="updateCharCount()"></textarea>
+          <div id="img-preview-wrap" style="display:none;margin-top:10px">
+            <img id="img-preview" style="max-width:100%;max-height:200px;border-radius:10px;object-fit:cover">
+            <button onclick="removePostImg()" style="display:block;margin-top:6px;background:#fee2e2;color:#dc2626;border:none;border-radius:8px;padding:4px 12px;font-size:12px;cursor:pointer">✕ Remove image</button>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;flex-wrap:wrap;gap:10px">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+              <button onclick="document.getElementById('post-img-inp').click()" style="background:var(--g50);border:1px solid var(--g200);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;color:var(--g700)">🖼️ Image</button>
+              <input type="file" id="post-img-inp" accept="image/*" style="display:none" onchange="previewPostImg(event)">
+              <select id="compose-category" style="font-size:12px;padding:6px 12px;border:1px solid var(--g200);border-radius:20px;background:#fff;cursor:pointer;color:var(--g700)">
+                <option value="">🏷️ Category</option>
+                <option>GST & Taxation</option><option>Corporate Law</option><option>Engineering</option>
+                <option>Finance & Investment</option><option>Consulting</option><option>Influencer & Branding</option>
+                <option>Corporate Presentations</option><option>Technology</option><option>General</option>
+              </select>
+              <span id="char-count" style="font-size:12px;color:var(--g400)">0 / 3000</span>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button onclick="collapseCompose()" style="background:#fff;border:1px solid var(--g200);border-radius:20px;padding:7px 16px;font-size:13px;font-weight:600;cursor:pointer;color:var(--g500)">Cancel</button>
+              <button id="publish-btn" onclick="publishPost()" style="background:var(--b700);color:#fff;border:none;border-radius:20px;padding:8px 22px;font-size:13px;font-weight:700;cursor:pointer">Publish</button>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px" id="compose-shortcuts">
+          <button onclick="setComposeType('article');expandCompose()" style="background:var(--g50);border:1px solid var(--g200);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;color:var(--g700)">📰 Write Article</button>
+          <button onclick="setComposeType('insight');expandCompose()" style="background:var(--g50);border:1px solid var(--g200);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;color:var(--g700)">💡 Share Insight</button>
+          <button onclick="setComposeType('news');expandCompose()" style="background:var(--g50);border:1px solid var(--g200);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;color:var(--g700)">📣 Announce</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feed tabs + Feed -->
+  <div class="section" style="padding-top:28px">
+    <div style="display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start">
+      <div>
+        <div style="display:flex;gap:0;border-bottom:1px solid var(--g200);margin-bottom:24px;overflow-x:auto">
+          <button class="feed-tab active" id="ftab-all" onclick="setFeedTab('all')">All</button>
+          <button class="feed-tab" id="ftab-article" onclick="setFeedTab('article')">📰 Articles</button>
+          <button class="feed-tab" id="ftab-insight" onclick="setFeedTab('insight')">💡 Insights</button>
+          <button class="feed-tab" id="ftab-news" onclick="setFeedTab('news')">📣 Announcements</button>
+          <button class="feed-tab" id="ftab-post" onclick="setFeedTab('post')">📝 Posts</button>
+        </div>
+        <div id="feed-list"></div>
+      </div>
+      <div>
+        <div style="background:#fff;border:1px solid var(--g200);border-radius:var(--rl);padding:18px;margin-bottom:16px">
+          <h3 style="font-size:14px;font-weight:700;color:var(--g900);margin-bottom:14px">People to Connect</h3>
+          <div id="sidebar-people"></div>
+          <div class="see-all" style="font-size:13px;cursor:pointer;margin-top:4px" onclick="showPage('search')">Show more →</div>
+        </div>
+        <div style="background:#fff;border:1px solid var(--g200);border-radius:var(--rl);padding:18px;margin-bottom:16px">
+          <h3 style="font-size:14px;font-weight:700;color:var(--g900);margin-bottom:14px">Trending Topics</h3>
+          <div id="trending-topics"></div>
+        </div>
+        <div style="background:#fff;border:1px solid var(--g200);border-radius:var(--rl);padding:18px;margin-bottom:16px">
+          <h3 style="font-size:14px;font-weight:700;color:var(--g900);margin-bottom:14px">Upgrade to Unlock</h3>
+          <p style="font-size:13px;color:var(--g500);margin-bottom:14px">PRO & Elite get 10× more visibility, messaging & contact details.</p>
+          <button class="nav-btn-primary" style="width:100%;padding:10px" onclick="showPage('pricing')">See Plans →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article full-read modal -->
+  <div class="modal-overlay" id="modal-article-read">
+    <div class="modal" style="max-width:720px;padding:0;overflow:hidden">
+      <div id="article-read-content" style="max-height:88vh;overflow-y:auto;padding:0"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SEARCH PAGE ══ -->
+<div id="page-search" class="page">
+  <div class="section">
+    <div class="section-title" style="margin-bottom:20px">Find Professionals & Influencers</div>
+    <div class="search-bar-lg">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search by name, skill, city, niche or followers…" id="search-input" oninput="filterProfiles()">
+      <button onclick="filterProfiles()">Search</button>
+    </div>
+    <div class="filter-row">
+      <div class="filter-pill active" onclick="filterByProf(this,'All')">All</div>
+      <div class="filter-pill" onclick="filterByProf(this,'CA')">CA / CMA</div>
+      <div class="filter-pill" onclick="filterByProf(this,'Advocate')">Advocate</div>
+      <div class="filter-pill" onclick="filterByProf(this,'Engineer')">Engineer</div>
+      <div class="filter-pill" onclick="filterByProf(this,'Consultant')">Consultant</div>
+      <div class="filter-pill" onclick="filterByProf(this,'Advisor')">Advisor</div>
+      <div class="filter-pill" onclick="filterByProf(this,'CS')">Company Secretary</div>
+      <div class="filter-pill inf-pill" onclick="filterByProf(this,'Influencer')">✨ Influencers</div>
+      <div class="filter-pill" onclick="filterByProf(this,'CorpPres')">🎯 Corp. Presentation</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;font-size:13px;color:var(--g500);flex-wrap:wrap;gap:8px">
+      <span id="result-count">Showing all professionals</span>
+      <span style="color:var(--b600);cursor:pointer;font-weight:600" onclick="showPage('pricing')">🔓 Unlock full contact details — Upgrade to PRO</span>
+    </div>
+    <div class="card-grid" id="search-cards"></div>
+  </div>
+</div>
+
+<!-- ══ MY PROFILE (EDIT) PAGE ══ -->
+<div id="page-myprofile" class="page">
+  <div class="section">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px">
+      <div><div class="section-title">My Profile</div><div style="font-size:14px;color:var(--g400)">Keep your profile updated to attract more connections</div></div>
+      <div style="display:flex;gap:10px">
+        <button class="cancel-btn" onclick="showPage('home')">Cancel</button>
+        <button class="save-btn" onclick="saveProfile()">Save Changes</button>
+      </div>
+    </div>
+
+    <div class="profile-edit-wrap">
+      <!-- Cover + Avatar -->
+      <div class="profile-header-card">
+        <div class="profile-cover" id="profile-cover-el" onclick="document.getElementById('cover-file').click()">
+          <div class="profile-cover-overlay"><span style="color:#fff;font-size:14px;font-weight:600">📷 Change Cover Photo</span></div>
+          <input type="file" id="cover-file" accept="image/*" style="display:none" onchange="previewCover(event)">
+          <button class="profile-cover-change" onclick="event.stopPropagation();document.getElementById('cover-file').click()">📷 Change Cover</button>
+        </div>
+        <div class="profile-main-info">
+          <div class="profile-avatar-wrap">
+            <div class="profile-avatar-lg" id="profile-avatar-el" style="background:var(--b700)">RK</div>
+            <div class="avatar-change-btn" onclick="document.getElementById('avatar-main-file').click()" title="Change photo">✏️</div>
+            <input type="file" id="avatar-main-file" accept="image/*" style="display:none" onchange="previewAvatarMain(event)">
+          </div>
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px">
+            <div>
+              <div style="font-size:22px;font-weight:800;color:var(--g900)" id="display-name">Rajesh Kumar</div>
+              <div style="font-size:14px;color:var(--g500)" id="display-title">Chartered Accountant, FCA · K&A Associates</div>
+              <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap" id="display-social-links"></div>
+            </div>
+            <span class="plan-badge badge-pro" style="font-size:12px;padding:4px 10px">PRO Member</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tab-row">
+        <button class="tab-btn active" onclick="switchTab('basic')">Basic Info</button>
+        <button class="tab-btn" onclick="switchTab('professional')">Professional</button>
+        <button class="tab-btn" onclick="switchTab('social')">Social Media</button>
+        <button class="tab-btn" onclick="switchTab('portfolio')">Portfolio & Docs</button>
+        <button class="tab-btn" onclick="switchTab('settings')">Account Settings</button>
+      </div>
+
+      <!-- Tab: Basic Info -->
+      <div class="tab-content active" id="tab-basic">
+        <div class="form-section">
+          <div class="form-section-title">👤 Personal Information</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+            <label style="font-size:13px;font-weight:500;color:var(--g700)">Profile Photo</label>
+            <div style="display:flex;align-items:center;gap:16px">
+              <div style="width:64px;height:64px;border-radius:50%;background:var(--b700);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff" id="small-avatar">RK</div>
+              <div>
+                <button style="background:var(--b50);color:var(--b700);border:1px solid var(--b100);border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer" onclick="document.getElementById('avatar-main-file').click()">Upload New Photo</button>
+                <div style="font-size:11px;color:var(--g400);margin-top:4px">JPG or PNG, max 5 MB. Square photos work best.</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>First Name *</label><input type="text" id="inp-firstname" value="Rajesh" oninput="updateDisplayName()"></div>
+            <div class="form-group"><label>Last Name *</label><input type="text" id="inp-lastname" value="Kumar" oninput="updateDisplayName()"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Email Address *</label><input type="email" value="rajesh.kumar@ka-associates.com"></div>
+            <div class="form-group"><label>Mobile Number *</label><input type="tel" value="+91 98765 43210"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>City *</label><input type="text" value="Mumbai"></div>
+            <div class="form-group"><label>State *</label>
+              <select><option>Maharashtra</option><option>Delhi</option><option>Karnataka</option><option>Tamil Nadu</option><option>Gujarat</option><option>West Bengal</option></select>
+            </div>
+          </div>
+          <div class="form-group"><label>Date of Birth</label><input type="date" value="1982-05-14"></div>
+          <div class="form-group"><label>Bio / Tagline</label><input type="text" id="inp-bio" placeholder="e.g. CA | Tax & Audit Expert | 20+ years" value="CA | Tax & Audit Expert | 20+ years" oninput="updateDisplayTitle()"></div>
+        </div>
+      </div>
+
+      <!-- Tab: Professional -->
+      <div class="tab-content" id="tab-professional">
+        <div class="form-section">
+          <div class="form-section-title">💼 Professional Details</div>
+          <div class="form-group"><label>Profession *</label>
+            <select id="inp-profession" onchange="updateDisplayTitle()">
+              <option>Chartered Accountant (CA)</option><option>Cost & Management Accountant (CMA)</option>
+              <option>Advocate / Lawyer</option><option>Civil Engineer</option><option>IT / Software Engineer</option>
+              <option>Company Secretary (CS)</option><option>Financial Advisor</option>
+              <option>Business Consultant</option><option>Tax Consultant</option><option>Architect</option>
+              <option>Influencer / Content Creator</option><option>Corporate Presentation Consultant</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Current Designation</label><input type="text" id="inp-designation" value="Partner" oninput="updateDisplayTitle()"></div>
+            <div class="form-group"><label>Organisation / Firm</label><input type="text" id="inp-org" value="K&A Associates" oninput="updateDisplayTitle()"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Years of Experience</label><select><option>5–10 years</option><option>1–3 years</option><option>3–5 years</option><option>10–20 years</option><option>20+ years</option></select></div>
+            <div class="form-group"><label>Membership / Bar Number</label><input type="text" value="ICAI No. 123456"></div>
+          </div>
+          <div class="form-group"><label>Professional Summary</label><textarea>Chartered Accountant with 20+ years of experience in taxation, audit, and financial advisory. Specialised in GST, corporate restructuring, and SEBI-registered valuation. Partner at K&A Associates, Mumbai. ICAI member since 2004.</textarea></div>
+          <div class="form-group"><label>Key Skills (comma-separated)</label><input type="text" value="GST Filing, Income Tax, Audit, SEBI Valuation, Corporate Law, MCA Filings"></div>
+          <div class="form-group"><label>Education</label><textarea style="min-height:70px">B.Com (Hons) – Mumbai University, 2002&#10;CA Final – ICAI, 2004</textarea></div>
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">🌟 Influencer Details <span style="font-size:12px;color:var(--g400);font-weight:400">(fill if you're a content creator)</span></div>
+          <div class="form-row">
+            <div class="form-group"><label>Content Niche / Category</label>
+              <select><option value="">Select niche…</option><option>Finance & Investing</option><option>Legal & Compliance</option><option>Tech & Startup</option><option>Lifestyle</option><option>Health & Wellness</option><option>Fashion & Beauty</option><option>Travel</option><option>Food</option><option>Education</option><option>Business & Entrepreneurship</option></select>
+            </div>
+            <div class="form-group"><label>Content Type</label>
+              <select><option value="">Select…</option><option>Short Videos (Reels/Shorts)</option><option>Long-form Video</option><option>Blog / Written</option><option>Podcasts</option><option>Photography</option><option>Mixed</option></select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Total Followers (approx.)</label><input type="text" placeholder="e.g. 1,20,000"></div>
+            <div class="form-group"><label>Avg. Engagement Rate (%)</label><input type="number" placeholder="e.g. 4.2" step="0.1"></div>
+          </div>
+          <div class="form-group"><label>Brand Collaboration Rate (₹ per post)</label><input type="text" placeholder="e.g. ₹15,000 – ₹25,000 per sponsored post"></div>
+          <div class="form-group"><label>Media Kit URL</label><input type="url" placeholder="https://drive.google.com/..."></div>
+        </div>
+      </div>
+
+      <!-- Tab: Social Media -->
+      <div class="tab-content" id="tab-social">
+        <div class="form-section">
+          <div class="form-section-title">🔗 Connect Your Social Accounts</div>
+          <p style="font-size:13px;color:var(--g500);margin-bottom:24px">Link your social media profiles so connections can find and follow you. Connected accounts show icons on your public profile.</p>
+          <div class="social-grid" id="social-grid-cards"></div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">📊 Social Media Stats</div>
+          <p style="font-size:13px;color:var(--g500);margin-bottom:20px">Enter your follower counts to display on your profile card.</p>
+          <div class="form-row">
+            <div class="form-group"><label>LinkedIn Followers</label><div class="input-with-icon"><span class="input-icon">💼</span><input type="number" placeholder="e.g. 8400"></div></div>
+            <div class="form-group"><label>Instagram Followers</label><div class="input-with-icon"><span class="input-icon">📸</span><input type="number" placeholder="e.g. 120000"></div></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>YouTube Subscribers</label><div class="input-with-icon"><span class="input-icon">▶️</span><input type="number" placeholder="e.g. 45000"></div></div>
+            <div class="form-group"><label>X / Twitter Followers</label><div class="input-with-icon"><span class="input-icon">𝕏</span><input type="number" placeholder="e.g. 12000"></div></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Facebook Page Likes</label><div class="input-with-icon"><span class="input-icon">📘</span><input type="number" placeholder="e.g. 25000"></div></div>
+            <div class="form-group"><label>Threads / Other</label><div class="input-with-icon"><span class="input-icon">🧵</span><input type="number" placeholder="e.g. 5000"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab: Portfolio -->
+      <div class="tab-content" id="tab-portfolio">
+        <div class="form-section">
+          <div class="form-section-title">📁 Documents & Certificates</div>
+          <div style="display:grid;gap:14px">
+            <div style="border:1.5px dashed var(--b400);border-radius:var(--rl);padding:24px;text-align:center;background:var(--b50);cursor:pointer" onclick="document.getElementById('cv-upload').click()">
+              <div style="font-size:28px;margin-bottom:8px">📄</div>
+              <div style="font-size:14px;font-weight:600;color:var(--b700)">Upload CV / Resume</div>
+              <div style="font-size:12px;color:var(--g400);margin-top:4px">PDF or DOCX · max 10 MB</div>
+              <input type="file" id="cv-upload" style="display:none" accept=".pdf,.doc,.docx" onchange="showUploadName(event,'cv-name')">
+              <div id="cv-name" style="font-size:12px;color:var(--green);margin-top:8px;font-weight:600"></div>
+            </div>
+            <div style="border:1.5px dashed var(--g200);border-radius:var(--rl);padding:24px;text-align:center;background:#fff;cursor:pointer" onclick="document.getElementById('cert-upload').click()">
+              <div style="font-size:28px;margin-bottom:8px">🏆</div>
+              <div style="font-size:14px;font-weight:600;color:var(--g700)">Upload Certificates & Awards</div>
+              <div style="font-size:12px;color:var(--g400);margin-top:4px">ICAI, Bar Council, BIS, ISO certificates · PDF / JPG</div>
+              <input type="file" id="cert-upload" style="display:none" accept=".pdf,.jpg,.png" multiple onchange="showUploadName(event,'cert-name')">
+              <div id="cert-name" style="font-size:12px;color:var(--green);margin-top:8px;font-weight:600"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">🔗 Portfolio / Work Links</div>
+          <div class="form-group"><label>Website / Portfolio URL</label><input type="url" placeholder="https://rajeshkumar.in" value="https://ka-associates.in"></div>
+          <div class="form-group"><label>Featured Article or Case Study</label><input type="url" placeholder="https://economictimes.com/your-article"></div>
+          <div class="form-group"><label>YouTube / Video Channel</label><input type="url" placeholder="https://youtube.com/@rajeshca"></div>
+          <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:var(--r);padding:14px;font-size:13px;color:#92400e">
+            💡 <strong>Elite plan</strong> allows unlimited portfolio uploads and featured placement on search. <span style="color:var(--b700);font-weight:600;cursor:pointer" onclick="showPage('pricing')">Upgrade →</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab: Settings -->
+      <div class="tab-content" id="tab-settings">
+        <div class="form-section">
+          <div class="form-section-title">🔒 Privacy Settings</div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--g50);border-radius:10px;border:1px solid var(--g200)">
+              <div><div style="font-size:14px;font-weight:600;color:var(--g900)">Show contact details publicly</div><div style="font-size:12px;color:var(--g400)">Email and phone visible to PRO/Elite members only</div></div>
+              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer"><input type="checkbox" checked style="opacity:0;width:0;height:0"><span style="position:absolute;inset:0;background:#16a34a;border-radius:34px;transition:.3s"><span style="position:absolute;left:22px;top:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.3s"></span></span></label>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--g50);border-radius:10px;border:1px solid var(--g200)">
+              <div><div style="font-size:14px;font-weight:600;color:var(--g900)">Show in search results</div><div style="font-size:12px;color:var(--g400)">Let others discover you via search</div></div>
+              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer"><input type="checkbox" checked style="opacity:0;width:0;height:0"><span style="position:absolute;inset:0;background:#16a34a;border-radius:34px;transition:.3s"><span style="position:absolute;left:22px;top:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.3s"></span></span></label>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--g50);border-radius:10px;border:1px solid var(--g200)">
+              <div><div style="font-size:14px;font-weight:600;color:var(--g900)">Allow direct messages</div><div style="font-size:12px;color:var(--g400)">Receive messages from PRO/Elite members</div></div>
+              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer"><input type="checkbox" checked style="opacity:0;width:0;height:0"><span style="position:absolute;inset:0;background:#16a34a;border-radius:34px;transition:.3s"><span style="position:absolute;left:22px;top:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.3s"></span></span></label>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--g50);border-radius:10px;border:1px solid var(--g200)">
+              <div><div style="font-size:14px;font-weight:600;color:var(--g900)">Email notifications</div><div style="font-size:12px;color:var(--g400)">Get notified on new connections and messages</div></div>
+              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer"><input type="checkbox" style="opacity:0;width:0;height:0"><span style="position:absolute;inset:0;background:var(--g200);border-radius:34px;transition:.3s"><span style="position:absolute;left:2px;top:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.3s"></span></span></label>
+            </div>
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">🗑️ Danger Zone</div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button style="padding:10px 20px;background:#fff;color:#dc2626;border:1.5px solid #dc2626;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer">Deactivate Account</button>
+            <button style="padding:10px 20px;background:#dc2626;color:#fff;border:none;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer">Delete Account Permanently</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Save -->
+      <div style="display:flex;justify-content:flex-end;gap:12px;padding:0 0 32px">
+        <button class="cancel-btn" onclick="showPage('home')">Cancel</button>
+        <button class="save-btn" onclick="saveProfile()">Save All Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PRICING PAGE ══ -->
+<div id="page-pricing" class="page">
+  <div class="pricing-hero">
+    <h1>Simple, Transparent Pricing</h1>
+    <p>For professionals & influencers. Cancel anytime.</p>
+    <div class="billing-toggle">
+      <button class="toggle-btn active" id="btn-monthly" onclick="setBilling('monthly')">Monthly</button>
+      <button class="toggle-btn" id="btn-annual" onclick="setBilling('annual')">Annual <span class="save-badge">Save 30%</span></button>
+    </div>
+  </div>
+  <div style="padding:40px 24px 0">
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-name">Free</div>
+        <div class="plan-price"><span class="plan-price-num">₹0</span><span class="plan-price-period">/ month</span></div>
+        <div class="plan-desc">Start with a basic listing. Great for getting discovered.</div>
+        <button class="plan-btn plan-btn-outline" onclick="openModal('signup')">Get Started Free</button>
+        <div class="plan-features">
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Basic profile listing</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>View up to 10 profiles/month</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>1 document upload</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Activity feed access</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>1 social media link</div>
+          <div class="plan-feat"><span class="feat-check no">✗</span>Direct messaging</div>
+          <div class="plan-feat"><span class="feat-check no">✗</span>Contact details visible</div>
+          <div class="plan-feat"><span class="feat-check no">✗</span>Profile analytics</div>
+          <div class="plan-feat"><span class="feat-check no">✗</span>Influencer media kit</div>
+        </div>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-popular">Most Popular</div>
+        <div class="plan-name" style="color:var(--b700)">PRO</div>
+        <div class="plan-price"><span class="plan-price-num" id="pro-price">₹299</span><span class="plan-price-period">/ month</span></div>
+        <div class="plan-orig" id="pro-orig" style="visibility:hidden">₹429/month</div>
+        <div class="plan-desc">For professionals & influencers growing their network and client base.</div>
+        <button class="plan-btn plan-btn-primary" onclick="openModal('checkout-pro')">Start PRO – 7 Days Free</button>
+        <div class="plan-features">
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Everything in Free</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Unlimited profile views</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Direct messaging (50/mo)</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>View contact details</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>5 document uploads</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>All social media links</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Profile analytics</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>PRO badge on profile</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Influencer media kit upload</div>
+          <div class="plan-feat"><span class="feat-check no">✗</span>Lead generation tools</div>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name gold-text" style="color:var(--gold)">Elite</div>
+        <div class="plan-price"><span class="plan-price-num gold" id="elite-price">₹799</span><span class="plan-price-period">/ month</span></div>
+        <div class="plan-orig" id="elite-orig" style="visibility:hidden">₹1,149/month</div>
+        <div class="plan-desc">For established professionals & top influencers seeking maximum visibility.</div>
+        <button class="plan-btn plan-btn-gold" onclick="openModal('checkout-elite')">Start Elite – 14 Days Free</button>
+        <div class="plan-features">
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Everything in PRO</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Unlimited messaging</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Featured profile placement</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Unlimited uploads</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Lead generation & CRM</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Gold Elite badge</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Brand collab matchmaking</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Dedicated account manager</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Referral commission (10%)</div>
+        </div>
+      </div>
+      <div class="plan-card" style="border:2px solid #fce7f3">
+        <div class="plan-name" style="background:linear-gradient(135deg,#ec4899,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Influencer+</div>
+        <div class="plan-price"><span class="plan-price-num pink" id="inf-price">₹499</span><span class="plan-price-period">/ month</span></div>
+        <div class="plan-orig" id="inf-orig" style="visibility:hidden">₹699/month</div>
+        <div class="plan-desc">Designed for content creators, influencers & digital brand ambassadors.</div>
+        <button class="plan-btn plan-btn-pink" onclick="openModal('checkout-inf')">Start Influencer+ Trial</button>
+        <div class="plan-features">
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Everything in PRO</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Influencer profile card with follower stats</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Media kit upload & showcase</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Brand collaboration board</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>All social accounts linked & displayed</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Featured in Influencer section</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Collab rate card on profile</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Pink Influencer+ badge</div>
+          <div class="plan-feat"><span class="feat-check yes">✓</span>Analytics — reach & impressions</div>
+        </div>
+      </div>
+    </div>
+    <div class="compare-wrap" style="padding-bottom:48px">
+      <h2 style="text-align:center;font-size:22px;font-weight:700;margin:48px 0 24px;color:var(--g900)">Full Feature Comparison</h2>
+      <table class="compare-table">
+        <thead><tr><th>Feature</th><th>Free</th><th class="th-pro" style="color:var(--b700)">PRO</th><th style="color:var(--gold)">Elite</th><th style="color:var(--pink)">Influencer+</th></tr></thead>
+        <tbody>
+          <tr class="cat-row"><td colspan="5">Profile & Visibility</td></tr>
+          <tr><td>Profile listing</td><td>Basic</td><td class="tick">Enhanced</td><td class="tick">Featured</td><td class="tick">Influencer Card</td></tr>
+          <tr><td>Profile views / month</td><td>10</td><td class="tick">Unlimited</td><td class="tick">Unlimited</td><td class="tick">Unlimited</td></tr>
+          <tr><td>Social media links shown</td><td>1</td><td class="tick">All (5+)</td><td class="tick">All + stats</td><td class="tick">All + follower count</td></tr>
+          <tr><td>Follower count display</td><td class="cross">—</td><td class="cross">—</td><td class="tick">✓</td><td class="tick">✓ Prominent</td></tr>
+          <tr class="cat-row"><td colspan="5">Networking</td></tr>
+          <tr><td>Direct messages / month</td><td class="cross">—</td><td>50</td><td class="tick">Unlimited</td><td>50</td></tr>
+          <tr><td>View contact details</td><td class="cross">✗</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+          <tr class="cat-row"><td colspan="5">Influencer Tools</td></tr>
+          <tr><td>Media kit upload</td><td class="cross">—</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓ Showcase</td></tr>
+          <tr><td>Brand collaboration board</td><td class="cross">—</td><td class="cross">—</td><td class="cross">—</td><td class="tick">✓</td></tr>
+          <tr><td>Collab rate card</td><td class="cross">—</td><td class="cross">—</td><td class="cross">—</td><td class="tick">✓</td></tr>
+          <tr><td>Featured in Influencer section</td><td class="cross">—</td><td class="cross">—</td><td class="tick">✓</td><td class="tick">✓ Top placement</td></tr>
+          <tr class="cat-row"><td colspan="5">Support & Analytics</td></tr>
+          <tr><td>Profile analytics</td><td class="cross">—</td><td class="tick">Basic</td><td class="tick">Advanced</td><td class="tick">Reach & impressions</td></tr>
+          <tr><td>Customer support</td><td>Email</td><td>Priority Email</td><td>Dedicated Manager</td><td>Priority Email</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DASHBOARD ══ -->
+<div id="page-dashboard" class="page">
+  <div class="section">
+    <div class="section-title" style="margin-bottom:24px">My Dashboard</div>
+    <div class="dash-grid">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="dash-card plan-status-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start"><div><div class="plan-status-name">PRO Plan</div><div style="font-size:12px;color:var(--g400);margin-bottom:14px">Renews 15 Aug 2025</div></div><span class="plan-badge badge-pro">PRO</span></div>
+          <div class="usage-bar-wrap"><div class="usage-label"><span>Messages</span><span>38 / 50</span></div><div class="usage-bar"><div class="usage-fill warn" style="width:76%"></div></div></div>
+          <div class="usage-bar-wrap"><div class="usage-label"><span>Docs uploaded</span><span>3 / 5</span></div><div class="usage-bar"><div class="usage-fill" style="width:60%"></div></div></div>
+          <button style="width:100%;background:var(--b700);color:#fff;border:none;border-radius:20px;padding:9px 0;font-size:13px;font-weight:700;cursor:pointer;margin-top:14px" onclick="showPage('pricing')">⬆ Upgrade to Elite</button>
+        </div>
+        <div class="dash-card">
+          <div style="font-size:14px;font-weight:700;color:var(--g900);margin-bottom:14px">Quick Actions</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <button style="width:100%;padding:10px;background:var(--b50);color:var(--b700);border:1px solid var(--b100);border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-align:left" onclick="showPage('myprofile')">✏️ Edit My Profile</button>
+            <button style="width:100%;padding:10px;background:var(--b50);color:var(--b700);border:1px solid var(--b100);border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-align:left" onclick="switchTab('social');showPage('myprofile')">🔗 Connect Social Media</button>
+            <button style="width:100%;padding:10px;background:var(--b50);color:var(--b700);border:1px solid var(--b100);border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-align:left" onclick="showPage('search')">🔍 Find Professionals</button>
+            <button style="width:100%;padding:10px;background:var(--b50);color:var(--b700);border:1px solid var(--b100);border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-align:left" onclick="openModal('referral')">🎁 Refer & Earn</button>
+            <button style="width:100%;padding:10px;background:var(--b50);color:var(--b700);border:1px solid var(--b100);border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-align:left" onclick="openModal('billing')">🧾 View Invoices</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-label">Profile Views</div><div class="stat-num">1,284</div><div class="stat-change">↑ 23% this month</div></div>
+          <div class="stat-card"><div class="stat-label">Connections</div><div class="stat-num">187</div><div class="stat-change">↑ 14 this week</div></div>
+          <div class="stat-card"><div class="stat-label">Messages Sent</div><div class="stat-num">38</div><div style="font-size:11px;color:var(--gold)">12 remaining</div></div>
+          <div class="stat-card"><div class="stat-label">Search Appearances</div><div class="stat-num">3,410</div><div class="stat-change">↑ 18% this month</div></div>
+        </div>
+        <div class="dash-card" style="margin-bottom:20px">
+          <div style="font-size:14px;font-weight:700;color:var(--g900);margin-bottom:16px">Profile Views – Last 30 Days</div>
+          <div style="display:flex;align-items:flex-end;gap:4px;height:100px" id="mini-chart"></div>
+        </div>
+        <div class="dash-card">
+          <div style="font-size:14px;font-weight:700;color:var(--g900);margin-bottom:14px">Recent Activity</div>
+          <div style="display:flex;flex-direction:column;gap:14px" id="activity-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><div style="font-size:20px;font-weight:700;color:#fff;margin-bottom:10px">PRO<span style="color:var(--b400)">Connect</span> India</div><p style="font-size:13px;line-height:1.7">India's trusted network for professionals & influencers. GST invoices provided.</p></div>
+      <div class="footer-col"><h4>Plans</h4><ul><li>Free Plan</li><li onclick="showPage('pricing')">PRO Plan – ₹299/mo</li><li onclick="showPage('pricing')">Elite Plan – ₹799/mo</li><li onclick="showPage('pricing')">Influencer+ – ₹499/mo</li><li onclick="showPage('pricing')">Annual Billing (Save 30%)</li></ul></div>
+      <div class="footer-col"><h4>For Professionals</h4><ul><li onclick="showPage('myprofile')">Create Profile</li><li onclick="showPage('search')">Browse Directory</li><li>Professional Badges</li><li>Influencer Network</li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li>About Us</li><li>Privacy Policy</li><li>Terms of Use</li><li>Refund Policy</li><li>Contact</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 PRO Connect India. All rights reserved. GST No: 29AABCP1234A1Z5</p><p>Made with ❤️ for Indian Professionals & Influencers</p></div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-login"><div class="modal"><button class="modal-close" onclick="closeModal('login')">✕</button><h2>Sign In</h2><p class="sub">Welcome back</p><div class="form-group"><label>Email or Mobile</label><input type="text" placeholder="you@example.com"></div><div class="form-group"><label>Password</label><input type="password" placeholder="••••••••"></div><button class="btn-submit">Sign In</button><div style="text-align:center;margin-top:14px;font-size:13px;color:var(--g400)">No account? <span style="color:var(--b600);font-weight:600;cursor:pointer" onclick="closeModal('login');openModal('signup')">Join Free</span></div></div></div>
+
+<div class="modal-overlay" id="modal-signup"><div class="modal"><button class="modal-close" onclick="closeModal('signup')">✕</button><h2>Join PRO Connect India</h2><p class="sub">Free to join — upgrade anytime</p><div class="form-row"><div class="form-group"><label>First Name</label><input type="text" placeholder="Rajesh"></div><div class="form-group"><label>Last Name</label><input type="text" placeholder="Kumar"></div></div><div class="form-group"><label>Email</label><input type="email" placeholder="you@example.com"></div><div class="form-group"><label>Profession</label><select><option value="">Select…</option><option>CA</option><option>Advocate</option><option>Engineer</option><option>Consultant</option><option>Advisor</option><option>Influencer / Creator</option><option>Corporate Presentation Consultant</option><option>Other</option></select></div><div class="form-group"><label>Password</label><input type="password" placeholder="Min 8 characters"></div><button class="btn-submit" onclick="closeModal('signup');showPage('myprofile')">Create Account →</button></div></div>
+
+<div class="modal-overlay" id="modal-checkout-pro"><div class="modal"><button class="modal-close" onclick="closeModal('checkout-pro')">✕</button><h2>Start PRO Plan</h2><p class="sub">7-day free trial — no charge today</p><div style="background:var(--b50);border:1.5px solid var(--b100);border-radius:10px;padding:16px;margin-bottom:20px"><div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px"><span>PRO Plan (Monthly)</span><span style="font-weight:700">₹299 / month</span></div><div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--g400)">First charge</span><span style="color:var(--green);font-weight:600">After 7-day trial</span></div></div><div class="form-group"><label>Card Number</label><input type="text" placeholder="4111 1111 1111 1111"></div><div class="form-row"><div class="form-group"><label>Expiry</label><input type="text" placeholder="MM / YY"></div><div class="form-group"><label>CVV</label><input type="text" placeholder="•••"></div></div><div style="font-size:12px;color:var(--g400);margin-bottom:16px">Or pay via UPI · Net Banking · Razorpay</div><button class="btn-submit" onclick="closeModal('checkout-pro');openModal('success')">Start Free Trial →</button><div style="text-align:center;font-size:11px;color:var(--g400);margin-top:10px">🔒 Razorpay secure · Cancel anytime · GST invoice</div></div></div>
+
+<div class="modal-overlay" id="modal-checkout-elite"><div class="modal"><button class="modal-close" onclick="closeModal('checkout-elite')">✕</button><h2>Start Elite Plan</h2><p class="sub">14-day free trial</p><div style="background:#fef3c7;border:1.5px solid #fcd34d;border-radius:10px;padding:16px;margin-bottom:20px"><div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px"><span>Elite Plan (Monthly)</span><span style="font-weight:700;color:var(--gold)">₹799 / month</span></div><div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--g400)">First charge</span><span style="color:var(--green);font-weight:600">After 14-day trial</span></div></div><div class="form-group"><label>Card Number</label><input type="text" placeholder="4111 1111 1111 1111"></div><div class="form-row"><div class="form-group"><label>Expiry</label><input type="text" placeholder="MM / YY"></div><div class="form-group"><label>CVV</label><input type="text" placeholder="•••"></div></div><button class="btn-submit" style="background:linear-gradient(135deg,#f59e0b,#d97706)" onclick="closeModal('checkout-elite');openModal('success')">Start Free Trial →</button></div></div>
+
+<div class="modal-overlay" id="modal-checkout-inf"><div class="modal"><button class="modal-close" onclick="closeModal('checkout-inf')">✕</button><h2>Start Influencer+ Plan</h2><p class="sub">7-day free trial for creators</p><div style="background:#fce7f3;border:1.5px solid #fbcfe8;border-radius:10px;padding:16px;margin-bottom:20px"><div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px"><span>Influencer+ (Monthly)</span><span style="font-weight:700;color:var(--pink)">₹499 / month</span></div><div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--g400)">First charge</span><span style="color:var(--green);font-weight:600">After 7-day trial</span></div></div><div class="form-group"><label>Card Number</label><input type="text" placeholder="4111 1111 1111 1111"></div><div class="form-row"><div class="form-group"><label>Expiry</label><input type="text" placeholder="MM / YY"></div><div class="form-group"><label>CVV</label><input type="text" placeholder="•••"></div></div><button class="btn-submit" style="background:linear-gradient(135deg,#ec4899,#db2777)" onclick="closeModal('checkout-inf');openModal('success')">Start Free Trial →</button></div></div>
+
+<div class="modal-overlay" id="modal-success"><div class="modal" style="text-align:center"><button class="modal-close" onclick="closeModal('success')">✕</button><div style="font-size:56px;margin-bottom:16px">🎉</div><h2>You're All Set!</h2><p class="sub">Your free trial has started. No charge until the trial ends.</p><div style="background:var(--b50);border-radius:10px;padding:16px;margin:16px 0;text-align:left"><div style="font-size:13px;font-weight:600;color:var(--b700);margin-bottom:8px">Next steps:</div><div style="font-size:13px;color:var(--g700);display:flex;flex-direction:column;gap:6px"><div>✅ Complete your profile</div><div>✅ Connect your social accounts</div><div>✅ Upload your CV or media kit</div><div>✅ Start connecting with professionals</div></div></div><button class="btn-submit" onclick="closeModal('success');showPage('myprofile')">Complete My Profile →</button></div></div>
+
+<div class="modal-overlay" id="modal-social-connect"><div class="modal"><button class="modal-close" onclick="closeModal('social-connect')">✕</button><div id="social-modal-content"></div></div></div>
+
+<div class="modal-overlay" id="modal-referral"><div class="modal"><button class="modal-close" onclick="closeModal('referral')">✕</button><h2>Refer & Earn</h2><p class="sub">Earn 10% on every referral's first year subscription</p><div class="referral-box"><div style="font-size:14px;font-weight:600;color:#92400e;margin-bottom:4px">Your Referral Code</div><div class="referral-code">RAJESH2025</div><div style="font-size:12px;color:#a16207">Share and earn ₹ on each successful signup</div></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px;text-align:center"><div style="background:var(--g50);border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:var(--g900)">7</div><div style="font-size:11px;color:var(--g400)">Referrals</div></div><div style="background:var(--g50);border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:var(--green)">₹2,093</div><div style="font-size:11px;color:var(--g400)">Earned</div></div><div style="background:var(--g50);border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:var(--gold)">₹797</div><div style="font-size:11px;color:var(--g400)">Pending</div></div></div><button class="btn-submit">Copy Referral Link</button></div></div>
+
+<div class="modal-overlay" id="modal-billing"><div class="modal"><button class="modal-close" onclick="closeModal('billing')">✕</button><h2>Billing & Invoices</h2><p class="sub">PRO Plan · ₹299/month · Next: 15 Aug 2025</p><div style="margin-bottom:20px"><div class="invoice-row"><div><div style="font-weight:600">PRO Plan – July 2025</div><div style="font-size:12px;color:var(--g400)">15 Jul 2025</div></div><div style="display:flex;align-items:center;gap:12px"><span>₹299</span><span class="status-paid">Paid</span></div></div><div class="invoice-row"><div><div style="font-weight:600">PRO Plan – June 2025</div><div style="font-size:12px;color:var(--g400)">15 Jun 2025</div></div><div style="display:flex;align-items:center;gap:12px"><span>₹299</span><span class="status-paid">Paid</span></div></div><div class="invoice-row"><div><div style="font-weight:600">PRO Plan – May 2025</div><div style="font-size:12px;color:var(--g400)">15 May 2025</div></div><div style="display:flex;align-items:center;gap:12px"><span>₹299</span><span class="status-paid">Paid</span></div></div></div><button style="width:100%;padding:10px;border:1.5px solid #dc2626;border-radius:20px;background:#fff;color:#dc2626;font-size:13px;font-weight:600;cursor:pointer">Cancel Subscription</button></div></div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const socials=[
+  {id:'linkedin',name:'LinkedIn',icon:'💼',color:'#0077b5',bg:'#e8f4fd',placeholder:'linkedin.com/in/yourprofile',handle:'linkedin.com/in/rajeshkumar'},
+  {id:'instagram',name:'Instagram',icon:'📸',color:'#e1306c',bg:'#fce7f3',placeholder:'instagram.com/yourhandle',handle:''},
+  {id:'facebook',name:'Facebook',icon:'📘',color:'#1877f2',bg:'#e8f0fe',placeholder:'facebook.com/yourpage',handle:'facebook.com/kajesh.ca'},
+  {id:'twitter',name:'X / Twitter',icon:'𝕏',color:'#000',bg:'#f0f0f0',placeholder:'x.com/yourhandle',handle:''},
+  {id:'youtube',name:'YouTube',icon:'▶️',color:'#ff0000',bg:'#ffe8e8',placeholder:'youtube.com/@channel',handle:'youtube.com/@rajeshca'},
+  {id:'whatsapp',name:'WhatsApp Business',icon:'💬',color:'#25d366',bg:'#e8fdf0',placeholder:'+91 98765 43210',handle:''},
+  {id:'threads',name:'Threads',icon:'🧵',color:'#000',bg:'#f5f5f5',placeholder:'threads.net/@yourhandle',handle:''},
+  {id:'website',name:'Personal Website',icon:'🌐',color:'#6366f1',bg:'#eef2ff',placeholder:'https://yourwebsite.com',handle:'https://ka-associates.in'},
+];
+
+const professionals=[
+  {name:"Rajesh Kumar",title:"Chartered Accountant, FCA",org:"K&A Associates, Mumbai",tags:["GST","Income Tax","Audit"],color:"#1769c4",initials:"RK",city:"Mumbai",prof:"CA",plan:"elite",socials:['linkedin','facebook','website']},
+  {name:"Priya Anand",title:"Advocate, High Court",org:"Independent Practice, Bengaluru",tags:["Corporate Law","RERA","IPR"],color:"#7c3aed",initials:"PA",city:"Bengaluru",prof:"Advocate",plan:"pro",socials:['linkedin','twitter']},
+  {name:"Vikas Nair",title:"Structural Engineer",org:"BuildTech India, Hyderabad",tags:["BIM","Structural Design","IIT"],color:"#059669",initials:"VN",city:"Hyderabad",prof:"Engineer",plan:"pro",socials:['linkedin','youtube']},
+  {name:"Neha Patel",title:"Finance & Lifestyle Influencer",org:"1.2M Followers · Brand Collaborations",tags:["Finance","Lifestyle","Reels"],color:"linear-gradient(135deg,#ec4899,#8b5cf6)",initials:"NP",city:"Mumbai",prof:"Influencer",plan:"elite",followers:"1.2M",socials:['instagram','youtube','facebook'],isInfluencer:true},
+  {name:"Sunita Sharma",title:"Financial Advisor, CFP",org:"WealthFirst Advisory, Delhi",tags:["Mutual Funds","Tax Planning"],color:"#d97706",initials:"SS",city:"Delhi",prof:"Advisor",plan:"elite",socials:['linkedin','twitter']},
+  {name:"Arjun Kapoor",title:"Tech & Startup Influencer",org:"820K Followers · YouTube Creator",tags:["Startups","Tech Reviews","Podcasts"],color:"linear-gradient(135deg,#06b6d4,#3b82f6)",initials:"AK",city:"Delhi",prof:"Influencer",plan:"pro",followers:"820K",socials:['youtube','instagram','twitter'],isInfluencer:true},
+  {name:"Amit Mehta",title:"Company Secretary, FCS",org:"M/s Mehta & Co., Ahmedabad",tags:["MCA Filings","ROC","SEBI"],color:"#0f766e",initials:"AM",city:"Ahmedabad",prof:"CS",plan:"pro",socials:['linkedin']},
+  {name:"Kavitha Rao",title:"Business Consultant, MBA",org:"IIM-B Alumni, Bengaluru",tags:["Strategy","M&A","Startup"],color:"#be185d",initials:"KR",city:"Bengaluru",prof:"Consultant",plan:"free",socials:['linkedin']},
+  {name:"Priyanka Singh",title:"Wellness & Fitness Influencer",org:"540K Followers · Health Coach",tags:["Wellness","Fitness","Mindfulness"],color:"linear-gradient(135deg,#f59e0b,#ef4444)",initials:"PS",city:"Pune",prof:"Influencer",plan:"elite",followers:"540K",socials:['instagram','facebook','youtube'],isInfluencer:true},
+  {name:"Deepak Joshi",title:"Civil Engineer, B.Tech",org:"Joshi Infrastructure, Pune",tags:["Roads","Bridges","CPWD"],color:"#b45309",initials:"DJ",city:"Pune",prof:"Engineer",plan:"free",socials:['linkedin']},
+  {name:"Rohan Sharma",title:"Legal & Finance Influencer",org:"380K Followers · CA + YouTuber",tags:["Finance Education","CA Tips","Vlogs"],color:"linear-gradient(135deg,#8b5cf6,#ec4899)",initials:"RS",city:"Bengaluru",prof:"Influencer",plan:"pro",followers:"380K",socials:['youtube','instagram','twitter'],isInfluencer:true},
+  {name:"Meera Tiwari",title:"Advocate, Supreme Court",org:"Tiwari Law Chambers, Delhi",tags:["Constitutional","Criminal","PILs"],color:"#6d28d9",initials:"MT",city:"Delhi",prof:"Advocate",plan:"elite",socials:['linkedin','twitter']},
+  {name:"Siddharth Verma",title:"Corporate Presentation Consultant",org:"PitchCraft Studio, Mumbai",tags:["Pitch Decks","PowerPoint","Investor Decks"],color:"#4f46e5",initials:"SV",city:"Mumbai",prof:"CorpPres",plan:"elite",socials:['linkedin','website']},
+  {name:"Ananya Krishnan",title:"Corporate Presentation Specialist",org:"SlideWorks India, Bengaluru",tags:["Board Decks","Brand Narratives","Design"],color:"#0369a1",initials:"AK",city:"Bengaluru",prof:"CorpPres",plan:"pro",socials:['linkedin','instagram']},
+  {name:"Rahul Bose",title:"Executive Presentation Coach",org:"Bose & Co. Presentations, Delhi",tags:["IPO Decks","M&A Presentations","Storytelling"],color:"#7c3aed",initials:"RB",city:"Delhi",prof:"CorpPres",plan:"pro",socials:['linkedin','youtube']},
+  {name:"Divya Menon",title:"Corporate Deck Designer, MBA",org:"Visual Edge Consulting, Chennai",tags:["Sales Decks","Annual Reports","Infographics"],color:"#0891b2",initials:"DM",city:"Chennai",prof:"CorpPres",plan:"free",socials:['linkedin']},
+];
+
+const socialIcons={linkedin:'💼',instagram:'📸',facebook:'📘',twitter:'𝕏',youtube:'▶️',website:'🌐',whatsapp:'💬',threads:'🧵'};
+const socialColors={linkedin:'#0077b5',instagram:'#e1306c',facebook:'#1877f2',twitter:'#333',youtube:'#ff0000',website:'#6366f1',whatsapp:'#25d366',threads:'#333'};
+
+const planLabel={free:'<span class="plan-badge badge-free">Free</span>',pro:'<span class="plan-badge badge-pro">PRO</span>',elite:'<span class="plan-badge badge-elite">Elite ★</span>'};
+const infLabel='<span class="plan-badge badge-influencer">Influencer+</span>';
+
+function renderCards(containerId, data, showLock){
+  const el=document.getElementById(containerId);
+  if(!el) return;
+  el.innerHTML=data.map((p,i)=>{
+    const locked=showLock && i>=4 && p.plan==='free';
+    const isGrad=p.color.includes('gradient');
+    const avatarBg=isGrad?p.color:`background:${p.color}`;
+    const coverBg=isGrad?`background:${p.color}`:`background:linear-gradient(90deg,${p.color}cc,${p.color}88)`;
+    const badge=p.isInfluencer?infLabel:planLabel[p.plan];
+    const socialLinks=p.socials?p.socials.map(s=>`<div class="social-mini" style="background:${socialColors[s]}22;border-color:${socialColors[s]}44" title="${s}">${socialIcons[s]}</div>`).join(''):'';
+    const infBlock=p.isInfluencer&&p.followers?`<div class="inf-stats"><div class="inf-stat"><div class="inf-stat-n">${p.followers}</div><div class="inf-stat-l">Followers</div></div></div>`:'';
+    return`<div class="profile-card${p.isInfluencer?' influencer-card':''}">
+      <div class="card-cover" style="${coverBg}"></div>
+      <div class="card-body">
+        <div class="card-avatar" style="${avatarBg}">${p.initials}${p.plan!=='free'?'<div class="verified-badge">✓</div>':''}</div>
+        <div class="card-name">${p.name} ${badge}</div>
+        <div class="card-title">${p.title}</div>
+        <div class="card-org">${locked?'<span style="filter:blur(4px);user-select:none">••••••••••</span>':p.org}</div>
+        ${infBlock}
+        <div class="card-tags">${p.tags.map(t=>`<span class="tag${p.isInfluencer?' influencer-tag':''}">${t}</span>`).join('')}</div>
+        <div class="card-social">${socialLinks}</div>
+        <button class="card-connect${p.isInfluencer?' influencer-btn':''}" onclick="${locked?'showPage(\'pricing\')':'void(0)'}">${locked?'🔒 Upgrade to Connect':p.isInfluencer?'✨ Collab / Connect':'+ Connect'}</button>
+      </div>
+      ${locked?`<div class="lock-overlay"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><p>Upgrade to PRO to view full profile & contact</p><button onclick="showPage('pricing')">See Plans</button></div>`:''}
+    </div>`;
+  }).join('');
+}
+
+let currentFilter='All';
+function filterAndGo(prof){currentFilter=prof;showPage('search');}
+
+function filterProfiles(){
+  const q=(document.getElementById('search-input')||{value:''}).value.toLowerCase();
+  const f=professionals.filter(p=>(currentFilter==='All'||p.prof===currentFilter)&&(p.name.toLowerCase().includes(q)||p.title.toLowerCase().includes(q)||p.city.toLowerCase().includes(q)||p.tags.join(' ').toLowerCase().includes(q)||(p.followers||'').includes(q)));
+  renderCards('search-cards',f,true);
+  const cnt=document.getElementById('result-count');
+  if(cnt) cnt.textContent=`Showing ${f.length} professional${f.length!==1?'s':''}`;
+}
+function filterByProf(el,prof){
+  document.querySelectorAll('#page-search .filter-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active'); currentFilter=prof; filterProfiles();
+}
+function setProfPill(el,prof){
+  document.querySelectorAll('.profession-strip-inner .prof-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  showPage('search');
+  currentFilter=prof;
+  filterProfiles();
+}
+
+function renderSidebar(){
+  const el=document.getElementById('sidebar-people');
+  if(!el) return;
+  el.innerHTML=professionals.slice(0,5).map(p=>{
+    const isGrad=p.color.includes('gradient');
+    return`<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <div style="width:38px;height:38px;border-radius:50%;${isGrad?'background:'+p.color:'background:'+p.color};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0">${p.initials}</div>
+      <div style="min-width:0"><div style="font-size:13px;font-weight:600;color:var(--g900);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${p.name}</div><div style="font-size:11px;color:var(--g400)">${p.title.split(',')[0]}${p.isInfluencer?' · '+p.followers+' followers':''}</div></div>
+      <div style="font-size:12px;color:${p.isInfluencer?'var(--pink)':'var(--b700)'};font-weight:600;cursor:pointer;margin-left:auto;flex-shrink:0">${p.isInfluencer?'Collab':'Connect'}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderSocialCards(){
+  const el=document.getElementById('social-grid-cards');
+  if(!el) return;
+  el.innerHTML=socials.map(s=>{
+    const connected=s.handle!=='';
+    return`<div class="social-connect-card${connected?' connected':''}" id="sc-${s.id}">
+      <div class="social-icon-wrap" style="background:${s.bg};font-size:22px">${s.icon}</div>
+      <div style="flex:1;min-width:0">
+        <div class="social-name">${s.name}</div>
+        <div class="social-handle" id="sh-${s.id}">${connected?s.handle:'Not connected'}</div>
+        <div class="social-status">${connected?'✓ Connected':'Tap to connect'}</div>
+      </div>
+      <button class="social-btn social-btn-connect" onclick="connectSocial('${s.id}','${s.name}','${s.placeholder}')">Connect</button>
+      <button class="social-btn social-btn-connected" onclick="disconnectSocial('${s.id}')">✓ Connected</button>
+    </div>`;
+  }).join('');
+}
+
+function connectSocial(id,name,placeholder){
+  document.getElementById('social-modal-content').innerHTML=`
+    <h2 style="margin-bottom:6px">Connect ${name}</h2>
+    <p class="sub">Enter your ${name} profile URL or handle</p>
+    <div class="form-group"><label>${name} Profile URL / Handle</label><input type="text" id="social-inp-${id}" placeholder="${placeholder}" style="font-size:14px"></div>
+    <button class="btn-submit" onclick="saveSocial('${id}','${name}')">Connect ${name}</button>`;
+  openModal('social-connect');
+}
+function saveSocial(id,name){
+  const val=document.getElementById('social-inp-'+id).value.trim();
+  if(!val){showToast('Please enter a valid URL or handle');return;}
+  const card=document.getElementById('sc-'+id);
+  const handle=document.getElementById('sh-'+id);
+  if(card){card.classList.add('connected');}
+  if(handle){handle.textContent=val;}
+  closeModal('social-connect');
+  showToast(`${name} connected successfully! ✓`);
+  updateDisplaySocials();
+}
+function disconnectSocial(id){
+  const card=document.getElementById('sc-'+id);
+  const handle=document.getElementById('sh-'+id);
+  if(card){card.classList.remove('connected');}
+  if(handle){handle.textContent='Not connected';}
+  showToast('Account disconnected');
+  updateDisplaySocials();
+}
+function updateDisplaySocials(){
+  const el=document.getElementById('display-social-links');
+  if(!el) return;
+  const connected=socials.filter(s=>{
+    const sh=document.getElementById('sh-'+s.id);
+    return sh&&sh.textContent!=='Not connected';
+  });
+  el.innerHTML=connected.map(s=>`<a href="#" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:${socialColors[s.id]};background:${s.bg};padding:4px 10px;border-radius:16px;border:1px solid ${socialColors[s.id]}33">${s.icon} ${s.name}</a>`).join('');
+}
+
+function updateDisplayName(){
+  const fn=document.getElementById('inp-firstname');
+  const ln=document.getElementById('inp-lastname');
+  const dn=document.getElementById('display-name');
+  const sa=document.getElementById('small-avatar');
+  if(dn&&fn&&ln){dn.textContent=(fn.value+' '+ln.value).trim();}
+  if(sa&&fn&&ln){sa.textContent=((fn.value[0]||'')+(ln.value[0]||'')).toUpperCase();}
+  const av=document.getElementById('profile-avatar-el');
+  const avText=av&&av.children.length===0;
+  if(av&&avText&&fn&&ln){av.textContent=((fn.value[0]||'')+(ln.value[0]||'')).toUpperCase();}
+}
+function updateDisplayTitle(){
+  const bio=document.getElementById('inp-bio');
+  const org=document.getElementById('inp-org');
+  const dt=document.getElementById('display-title');
+  if(dt&&bio&&org){dt.textContent=`${bio.value} · ${org.value}`;}
+}
+
+function previewCover(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{
+    const el=document.getElementById('profile-cover-el');
+    if(el){el.style.background=`url('${ev.target.result}') center/cover`;}
+  };r.readAsDataURL(f);
+}
+function previewAvatarMain(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{
+    const av=document.getElementById('profile-avatar-el');
+    if(av){av.innerHTML=`<img src="${ev.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`;}
+    const sa=document.getElementById('small-avatar');
+    if(sa){sa.innerHTML=`<img src="${ev.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`;}
+  };r.readAsDataURL(f);
+}
+function showUploadName(e,targetId){
+  const files=Array.from(e.target.files);
+  const el=document.getElementById(targetId);
+  if(el&&files.length){el.textContent='✓ '+files.map(f=>f.name).join(', ');}
+}
+
+function switchTab(id){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.querySelector(`.tab-btn[onclick="switchTab('${id}')"]`).classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
+  if(id==='social') renderSocialCards();
+}
+
+function saveProfile(){
+  showToast('Profile saved successfully! ✓');
+}
+
+function renderDashboard(){
+  const vals=[40,55,38,72,91,64,80,95,110,88,120,145,130,160,140,175,155,190,172,210,195,220,240,200,260,245,280,310,290,320];
+  const max=Math.max(...vals);
+  const el=document.getElementById('mini-chart');
+  if(el) el.innerHTML=vals.map((v,i)=>`<div style="flex:1;display:flex;align-items:flex-end"><div style="width:100%;background:${i===vals.length-1?'var(--b700)':'var(--b100)'};height:${Math.round(v/max*100)}%;border-radius:3px 3px 0 0;min-height:3px"></div></div>`).join('');
+  const acts=[
+    {icon:'👤',text:'Sunita Sharma viewed your profile',time:'5 min ago'},
+    {icon:'🔗',text:'Priya Anand accepted your connection',time:'1 hr ago'},
+    {icon:'✨',text:'Neha Patel (Influencer) sent a collab request',time:'2 hr ago'},
+    {icon:'💬',text:'New message from Rohit Gupta',time:'3 hr ago'},
+    {icon:'⭐',text:'Your profile appeared in 42 searches today',time:'Today'},
+  ];
+  const al=document.getElementById('activity-list');
+  if(al) al.innerHTML=acts.map(a=>`<div style="display:flex;gap:12px;align-items:flex-start"><div style="font-size:20px">${a.icon}</div><div><div style="font-size:13px;color:var(--g700)">${a.text}</div><div style="font-size:11px;color:var(--g400);margin-top:2px">${a.time}</div></div></div>`).join('');
+}
+
+let billing='monthly';
+function setBilling(type){
+  billing=type;
+  document.getElementById('btn-monthly').classList.toggle('active',type==='monthly');
+  document.getElementById('btn-annual').classList.toggle('active',type==='annual');
+  const m={pro:'₹299',elite:'₹799',inf:'₹499'};
+  const a={pro:'₹209',elite:'₹559',inf:'₹349'};
+  const vals=type==='annual'?a:m;
+  Object.keys(vals).forEach(k=>{
+    const el=document.getElementById(k+'-price');
+    const orig=document.getElementById(k+'-orig');
+    if(el) el.textContent=vals[k];
+    if(orig) orig.style.visibility=type==='annual'?'visible':'hidden';
+  });
+}
+
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+  const m={home:0,search:1,dashboard:2,pricing:3,myprofile:4};
+  if(m[id]!==undefined) document.querySelectorAll('.nav-link')[m[id]]?.classList.add('active');
+  window.scrollTo(0,0);
+  if(id==='search') filterProfiles();
+  if(id==='dashboard') renderDashboard();
+  if(id==='myprofile'){renderSocialCards();updateDisplaySocials();}
+}
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+function openModal(id){document.getElementById('modal-'+id).classList.add('open');}
+function closeModal(id){document.getElementById('modal-'+id).classList.remove('open');}
+document.querySelectorAll('.modal-overlay').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open');}));
+
+// ── PUBLISH SYSTEM ──
+let currentComposeType='post';
+let postImgData=null;
+let feedFilter='all';
+
+const seedPosts=[
+  {id:1,type:'article',author:'Rajesh Kumar',initials:'RK',color:'#1769c4',badge:'Elite ★',badgeClass:'badge-elite',title:'New GST Amnesty Scheme 2025: What Every CA Must Know',body:'The government has rolled out a comprehensive amnesty scheme under GST that gives businesses a one-time window to settle outstanding dues without penalties. This article walks through the eligibility criteria, the filing process, and the critical deadlines every professional needs to mark in their calendar. Firms with turnover above ₹5 crore should prioritise this immediately.\n\nKey highlights include waiver of interest on delayed IGST payments before March 2024, simplified self-assessment for FY 2020–22, and a digital portal for one-click settlement. As practitioners, we must communicate this proactively to every client in our portfolio.\n\nWe have already helped 40+ clients use this scheme in our firm. Happy to connect and share our checklist.',category:'GST & Taxation',time:'2 hours ago',likes:84,comments:[{name:'Priya Anand',color:'#7c3aed',text:'Very useful summary! Sharing this with my clients too.'}],img:null},
+  {id:2,type:'insight',author:'Priya Anand',initials:'PA',color:'#7c3aed',badge:'PRO',badgeClass:'badge-pro',title:'',body:'The Supreme Court\'s recent arbitration judgment changes everything. Key takeaway: parties can no longer delay appointment of arbitrators beyond 30 days without court intervention. Draft all new commercial contracts with revised timelines accordingly. #ArbitrationLaw #CorporateLaw',category:'Corporate Law',time:'5 hours ago',likes:62,comments:[],img:null},
+  {id:3,type:'news',author:'Siddharth Verma',initials:'SV',color:'#4f46e5',badge:'Elite ★',badgeClass:'badge-elite',title:'PitchCraft Studio is now officially empanelled with SIDBI for startup pitch decks!',body:'We are thrilled to announce that PitchCraft Studio has been officially empanelled with the Small Industries Development Bank of India (SIDBI) to create investor-grade pitch decks for SIDBI-supported startups across India. This milestone opens up a massive opportunity for early-stage founders who need professional presentation design support at subsidised rates.\n\nIf you\'re a startup founder looking to raise your first round — reach out!',category:'Corporate Presentations',time:'Yesterday',likes:143,comments:[{name:'Ananya Krishnan',color:'#0369a1',text:'Congratulations! Well deserved.'}],img:null},
+  {id:4,type:'post',author:'Neha Patel',initials:'NP',color:'linear-gradient(135deg,#ec4899,#8b5cf6)',badge:'Influencer+',badgeClass:'badge-influencer',title:'',body:'Just wrapped a brand partnership with a leading mutual fund house 🎉 If you\'re a financial brand looking for authentic content — DM me! I only collaborate with products I personally use and believe in. 💰📊 #FinanceInfluencer #BrandCollab #Mumbai',category:'Influencer & Branding',time:'4 hours ago',likes:217,comments:[{name:'Arjun Kapoor',color:'#06b6d4',text:'Great work Neha! Always inspiring 🙌'}],img:null},
+  {id:5,type:'article',author:'Vikas Nair',initials:'VN',color:'#059669',badge:'PRO',badgeClass:'badge-pro',title:'BIM Adoption in India: Why Most Firms Are Still Stuck in 2010',body:'Building Information Modelling has been a buzzword in Indian construction for over a decade. Yet fewer than 12% of mid-size structural engineering firms have fully adopted BIM workflows. In this article I explore the three main barriers — software cost, skill gap, and client resistance — and offer a practical roadmap for firms to make the switch in under 6 months.\n\nBased on my experience deploying BIM on the Hyderabad Metro and several 40-storey commercial towers, the ROI on BIM adoption typically manifests within the first two projects through reduced clash detection rework and faster approvals.\n\nI am happy to run a free 1-hour BIM readiness workshop for engineering firms. Comment below or DM.',category:'Engineering',time:'1 day ago',likes:96,comments:[{name:'Deepak Joshi',color:'#b45309',text:'Excellent article Vikas! Would love to attend that workshop.'}],img:null},
+  {id:6,type:'insight',author:'Sunita Sharma',initials:'SS',color:'#d97706',badge:'Elite ★',badgeClass:'badge-elite',title:'',body:'Reminder for all my network: Small Finance Bank FDs are currently offering 8.5%–9.25% p.a. for 1–2 year tenures. For senior citizens add 0.5%. RBI supervised, DICGC insured up to ₹5 lakhs. Perfect for short-term surplus parking. Always do your own due diligence or consult a CFP. #Finance #InvestmentTips #FixedDeposit',category:'Finance & Investment',time:'2 days ago',likes:188,comments:[],img:null},
+];
+
+let allPosts=[...seedPosts];
+let nextId=seedPosts.length+1;
+
+function setComposeType(type){
+  currentComposeType=type;
+  ['post','article','insight','news'].forEach(t=>{
+    const btn=document.getElementById('ctype-'+t);
+    if(btn) btn.classList.toggle('active',t===type);
+  });
+  const tw=document.getElementById('article-title-wrap');
+  if(tw) tw.style.display=(type==='article'||type==='news')?'block':'none';
+  const ta=document.getElementById('compose-body');
+  const placeholders={post:'Write a post — share news, updates, or quick thoughts…',article:'Write your full article here. Articles appear publicly to all visitors…',insight:'Share a professional insight, tip or observation…',news:'Make an announcement for your network and the public…'};
+  if(ta) ta.placeholder=placeholders[type]||'';
+}
+
+function expandCompose(){
+  document.getElementById('compose-trigger').style.display='none';
+  document.getElementById('compose-shortcuts').style.display='none';
+  document.getElementById('compose-expanded').style.display='block';
+  const ta=document.getElementById('compose-body');
+  if(ta) ta.focus();
+}
+function collapseCompose(){
+  document.getElementById('compose-trigger').style.display='block';
+  document.getElementById('compose-shortcuts').style.display='flex';
+  document.getElementById('compose-expanded').style.display='none';
+  const ta=document.getElementById('compose-body');
+  if(ta) ta.value='';
+  const ti=document.getElementById('article-title-inp');
+  if(ti) ti.value='';
+  const cc=document.getElementById('char-count');
+  if(cc) cc.textContent='0 / 3000';
+  removePostImg();
+}
+function updateCharCount(){
+  const ta=document.getElementById('compose-body');
+  const cc=document.getElementById('char-count');
+  if(ta&&cc){
+    const n=ta.value.length;
+    cc.textContent=n+' / 3000';
+    cc.style.color=n>2800?'#dc2626':n>2400?'#d97706':'var(--g400)';
+  }
+}
+function previewPostImg(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{
+    postImgData=ev.target.result;
+    const img=document.getElementById('img-preview');
+    const wrap=document.getElementById('img-preview-wrap');
+    if(img) img.src=postImgData;
+    if(wrap) wrap.style.display='block';
+  };r.readAsDataURL(f);
+}
+function removePostImg(){
+  postImgData=null;
+  const inp=document.getElementById('post-img-inp');
+  const wrap=document.getElementById('img-preview-wrap');
+  if(inp) inp.value='';
+  if(wrap) wrap.style.display='none';
+}
+
+function publishPost(){
+  const ta=document.getElementById('compose-body');
+  const ti=document.getElementById('article-title-inp');
+  const cat=document.getElementById('compose-category');
+  const body=(ta&&ta.value.trim())||'';
+  if(!body){showToast('Please write something before publishing.');return;}
+  const title=(ti&&ti.value.trim())||'';
+  if((currentComposeType==='article'||currentComposeType==='news')&&!title){showToast('Please add a headline for your '+currentComposeType+'.');return;}
+  const now=new Date();
+  const timeStr='Just now';
+  const post={
+    id:nextId++,type:currentComposeType,author:'You',initials:'RK',
+    color:'#1769c4',badge:'PRO',badgeClass:'badge-pro',
+    title,body,category:(cat&&cat.value)||'General',time:timeStr,
+    likes:0,comments:[],img:postImgData,isNew:true
+  };
+  allPosts.unshift(post);
+  collapseCompose();
+  renderFeed();
+  showToast('✓ Published! Your '+currentComposeType+' is now live and publicly visible.');
+}
+
+function setFeedTab(type){
+  feedFilter=type;
+  ['all','article','insight','news','post'].forEach(t=>{
+    const btn=document.getElementById('ftab-'+t);
+    if(btn) btn.classList.toggle('active',t===type);
+  });
+  renderFeed();
+}
+
+function likePost(id){
+  const p=allPosts.find(x=>x.id===id);
+  if(!p) return;
+  p.liked=!p.liked;
+  p.likes+=p.liked?1:-1;
+  const el=document.getElementById('like-count-'+id);
+  if(el) el.textContent=p.likes;
+  const btn=document.getElementById('like-btn-'+id);
+  if(btn) btn.style.color=p.liked?'#dc2626':'var(--g500)';
+}
+
+function toggleComments(id){
+  const el=document.getElementById('comments-section-'+id);
+  if(el) el.style.display=el.style.display==='none'?'block':'none';
+}
+
+function addComment(id){
+  const inp=document.getElementById('comment-inp-'+id);
+  if(!inp||!inp.value.trim()) return;
+  const p=allPosts.find(x=>x.id===id);
+  if(!p) return;
+  p.comments.push({name:'You',color:'#1769c4',text:inp.value.trim()});
+  inp.value='';
+  const list=document.getElementById('comment-list-'+id);
+  if(list) list.innerHTML=renderCommentList(p.comments);
+  const cnt=document.getElementById('comment-count-'+id);
+  if(cnt) cnt.textContent=p.comments.length;
+}
+
+function renderCommentList(comments){
+  if(!comments.length) return '<div style="font-size:13px;color:var(--g400);padding:8px 0">No comments yet. Be the first!</div>';
+  return comments.map(c=>`<div class="comment-item"><div class="comment-avatar" style="background:${c.color}">${c.name.split(' ').map(w=>w[0]).join('').slice(0,2)}</div><div class="comment-bubble"><div class="comment-name">${c.name}</div>${c.text}</div></div>`).join('');
+}
+
+const typeConfig={
+  post:{label:'📝 Post',cls:'post'},
+  article:{label:'📰 Article',cls:'article'},
+  insight:{label:'💡 Insight',cls:'insight'},
+  news:{label:'📣 Announcement',cls:'news'}
+};
+
+function openArticle(id){
+  const p=allPosts.find(x=>x.id===id);
+  if(!p) return;
+  const tc=typeConfig[p.type]||typeConfig.post;
+  const content=document.getElementById('article-read-content');
+  if(!content) return;
+  content.innerHTML=`
+    <div style="padding:32px 32px 0">
+      <button onclick="closeModal('article-read')" style="float:right;background:var(--g100);border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px;color:var(--g500)">✕</button>
+      <span class="type-badge ${tc.cls}">${tc.label}</span>
+      ${p.category?`<span style="font-size:11px;color:var(--b700);background:var(--b50);padding:3px 9px;border-radius:12px;font-weight:600;margin-left:6px">${p.category}</span>`:''}
+      ${p.title?`<h1 style="font-size:22px;font-weight:800;color:var(--g900);margin:14px 0 10px;line-height:1.3">${p.title}</h1>`:''}
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+        <div style="width:40px;height:40px;border-radius:50%;background:${p.color};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;flex-shrink:0">${p.initials}</div>
+        <div><div style="font-size:14px;font-weight:600;color:var(--g900)">${p.author} <span class="plan-badge ${p.badgeClass}">${p.badge}</span></div><div style="font-size:12px;color:var(--g400)">${p.time}</div></div>
+      </div>
+    </div>
+    ${p.img?`<img src="${p.img}" style="width:100%;max-height:300px;object-fit:cover;display:block">`:''}
+    <div style="padding:24px 32px">
+      <div style="font-size:15px;color:var(--g700);line-height:1.8;white-space:pre-line">${p.body}</div>
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--g200)">
+        <div style="font-size:13px;font-weight:700;color:var(--g900);margin-bottom:14px">Comments (${p.comments.length})</div>
+        <div id="article-modal-comments">${renderCommentList(p.comments)}</div>
+        <div class="comment-box" style="margin-top:16px">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--b700);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">RK</div>
+          <input class="comment-inp" id="modal-comment-inp-${id}" placeholder="Add a comment…">
+          <button class="comment-send" onclick="addModalComment(${id})">Post</button>
+        </div>
+      </div>
+    </div>`;
+  openModal('article-read');
+}
+
+function addModalComment(id){
+  const inp=document.getElementById('modal-comment-inp-'+id);
+  if(!inp||!inp.value.trim()) return;
+  const p=allPosts.find(x=>x.id===id);
+  if(!p) return;
+  p.comments.push({name:'You',color:'#1769c4',text:inp.value.trim()});
+  inp.value='';
+  const list=document.getElementById('article-modal-comments');
+  if(list) list.innerHTML=renderCommentList(p.comments);
+  const cnt=document.getElementById('comment-count-'+id);
+  if(cnt) cnt.textContent=p.comments.length;
+}
+
+function renderFeed(){
+  const el=document.getElementById('feed-list');
+  if(!el) return;
+  const filtered=feedFilter==='all'?allPosts:allPosts.filter(p=>p.type===feedFilter);
+  if(!filtered.length){
+    el.innerHTML=`<div style="text-align:center;padding:48px 24px;color:var(--g400)"><div style="font-size:36px;margin-bottom:12px">📭</div><div style="font-size:15px;font-weight:600">No ${feedFilter==='all'?'posts':'items'} yet</div><div style="font-size:13px;margin-top:6px">Be the first to publish!</div></div>`;
+    return;
+  }
+  const tc=typeConfig;
+  el.innerHTML=filtered.map(p=>{
+    const cfg=tc[p.type]||tc.post;
+    const isGrad=p.color&&p.color.includes('gradient');
+    const avatarStyle=isGrad?`background:${p.color}`:`background:${p.color}`;
+    const isArticle=(p.type==='article'||p.type==='news')&&p.title;
+    const bodyPreview=p.body.length>260&&isArticle?p.body.slice(0,260)+'…':p.body;
+    return`<div class="article-card${p.isNew?' new-post':''}">
+      ${p.img?`<img src="${p.img}" style="width:100%;height:200px;object-fit:cover;display:block">`:''}
+      <div class="article-card-body">
+        <span class="type-badge ${cfg.cls}">${cfg.label}</span>
+        ${p.category?`<span style="font-size:11px;color:var(--b700);background:var(--b50);padding:3px 9px;border-radius:12px;font-weight:600;margin-left:4px">${p.category}</span>`:''}
+        ${isArticle?`<h3 style="font-size:17px;font-weight:700;color:var(--g900);margin:10px 0 8px;line-height:1.35;cursor:pointer" onclick="openArticle(${p.id})">${p.title}</h3>`:''}
+        <div class="article-card-meta">
+          <div style="width:38px;height:38px;border-radius:50%;${avatarStyle};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;flex-shrink:0">${p.initials}</div>
+          <div><div style="font-size:13px;font-weight:600;color:var(--g900)">${p.author} <span class="plan-badge ${p.badgeClass}">${p.badge}</span></div><div style="font-size:11px;color:var(--g400)">${p.time}</div></div>
+        </div>
+        <div style="font-size:14px;color:var(--g700);line-height:1.65;white-space:pre-line">${bodyPreview}</div>
+        ${isArticle&&p.body.length>260?`<span class="article-read-btn" onclick="openArticle(${p.id})">Read full article →</span>`:''}
+        <div class="post-actions" style="margin-top:14px;border-top:1px solid var(--g100);padding-top:10px;display:flex">
+          <div class="post-act" id="like-btn-${p.id}" style="color:${p.liked?'#dc2626':'var(--g500)'}" onclick="likePost(${p.id})">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:${p.liked?'currentColor':'none'};stroke-width:1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span id="like-count-${p.id}">${p.likes}</span>
+          </div>
+          <div class="post-act" onclick="toggleComments(${p.id})">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span id="comment-count-${p.id}">${p.comments.length}</span> Comment${p.comments.length!==1?'s':''}
+          </div>
+          <div class="post-act" onclick="showToast('Link copied to clipboard!')">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            Share
+          </div>
+          ${isArticle?`<div class="post-act" onclick="openArticle(${p.id})"><svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Read</div>`:''}
+        </div>
+        <div id="comments-section-${p.id}" style="display:none;margin-top:4px">
+          <div id="comment-list-${p.id}">${renderCommentList(p.comments)}</div>
+          <div class="comment-box">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--b700);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">RK</div>
+            <input class="comment-inp" id="comment-inp-${p.id}" placeholder="Write a comment…" onkeydown="if(event.key==='Enter')addComment(${p.id})">
+            <button class="comment-send" onclick="addComment(${p.id})">Post</button>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderTrending(){
+  const el=document.getElementById('trending-topics');
+  if(!el) return;
+  const topics=[
+    {cat:'GST & Taxation',tag:'#GSTAmnesty2025',count:'3,240 posts'},
+    {cat:'Legal',tag:'#ArbitrationLaw',count:'1,820 posts'},
+    {cat:'Corporate Presentations',tag:'#PitchDeckIndia',count:'940 posts'},
+    {cat:'Finance',tag:'#SEBI2025',count:'2,180 posts'},
+    {cat:'Influencer',tag:'#BrandCollab',count:'4,600 posts'},
+  ];
+  el.innerHTML=topics.map(t=>`<div style="margin-bottom:12px"><div style="font-size:11px;color:var(--g400)">${t.cat}</div><div style="font-size:13px;font-weight:600;color:var(--g700)">${t.tag}</div><div style="font-size:11px;color:var(--g400)">${t.count}</div></div>`).join('');
+}
+
+// Init feed
+renderFeed();
+renderTrending();
+
+// ── END PUBLISH SYSTEM ──
+
+// Init
+renderCards('home-cards',professionals,false);
+renderSidebar();
+</script>
+</body>
+</html>
